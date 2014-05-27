@@ -1,0 +1,68 @@
+<% @require Template = '../core/template' %>
+
+<% @template Layout %>
+<% @inherits Template %>
+
+
+<% @block main { %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <title><%-d.title%></title>
+    <link media='all' rel='stylesheet' type='text/css' href='<%-this.relativePath('/s/css/main.css')%>'>
+  </head>
+  <body>
+    <% @call page %>
+  </body>
+</html>
+<% @block main } %>
+
+
+<% @block page { %>
+<% @call content %>
+<% @call sidebar %>
+<% @block page } %>
+
+
+<% @block content { %>
+<div class="content">
+  <h1><%-d.header%></h1>
+  <% @call contentInternal %>
+</div>
+<% @block content } %>
+
+
+<% @block sidebar { %>
+<div class='sidebar'>
+  <% @call navigationItems(d.navigation) %>
+  <div class='toggle'></div>
+</div>
+<% @block sidebar } %>
+
+
+<% @block navigationItems(items) { %>
+<div class='navigation'>
+  <% items.forEach(function(item) { %>
+    <%
+      var url = item.getUrl();
+      var childs = item.getChilds();
+    %>
+    <div class='item'>
+      <% if (url && d.url != url) { %>
+        <a href="<%-this.relativePath(url)%>">
+      <% } %>
+
+      <%-item.getNavigationTitle() %>
+
+      <% if (url && d.url != url) { %>
+        </a>
+      <% } %>
+
+      <% if (childs.length) { %>
+        <% @call navigationItems(childs) %>
+      <% } %>
+    </div>
+  <% }, this); %>
+</div>
+<% @block navigationItems } %>

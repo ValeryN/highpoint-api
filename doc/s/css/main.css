@@ -1,0 +1,165 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+a,
+a:visited {
+  border-bottom: 1px dashed #ccc;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 0;
+  text-decoration: underline;
+}
+
+code {
+  font-family: Courier, monospace;
+  white-space: nowrap;
+}
+
+code.block {
+  white-space: pre-wrap;
+}
+
+h1 {
+  border-bottom: 1px solid #eee;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+h2 {
+  border-bottom: 1px solid #eee;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 3em 0 1em;
+  padding: 0 0 4px;
+}
+
+ul {
+  margin: 0 0 1em;
+  padding: 0 0 0 1em;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li:before {
+  content: '— ';
+}
+
+pre {
+  background: #efefef;
+  font-family: Courier, monospace;
+  margin: 0 0 2em;
+  overflow: auto;
+  padding: 0.5em 1em;
+}
+
+pre a,
+pre a:visited {
+  color: #000;
+}
+
+.content {
+  line-height: 1.5;
+  margin-left: 260px;
+  padding: 20px;
+}
+
+.request {
+  border-left: 3px solid green;
+  margin: 0 0 1.5em;
+  padding: 3px 0 3px 10px;
+}
+
+.request .method {
+  display: inline-block;
+  font-family: Courier, monospace;
+  width: 60px;
+}
+
+.request .path {
+  display: inline;
+  font-family: Courier, monospace;
+}
+
+.request .auth,
+.request .auth a,
+.request .auth a:visited {
+  color: #900;
+}
+
+.request .auth {
+  display: inline;
+  margin-left: 20px;
+}
+
+.params {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  margin: 0 0 2em;
+  overflow: auto;
+  width: 100%;
+}
+
+.params caption {
+  font-size: .8em;
+  margin: 0 0 2px;
+  text-align: left;
+}
+
+.params th,
+.params td {
+  border: 1px solid #ddd;
+  padding: 6px 13px;
+}
+
+.params th {
+  font-weight: bold;
+  text-align: left;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.sidebar {
+  font-size: 12px;
+  padding: 5px 10px 20px 0;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: 220px;
+}
+
+.navigation {
+  list-style: none;
+  margin: .5em 0 .5em 1em;
+  padding: 0;
+}
+
+.navigation .item {
+  margin: 0 0 .4em;
+  padding: 0;
+}
+
+.navigation a,
+.navigation a:visited {
+  border-bottom: 0;
+  color: #4183c4;
+}

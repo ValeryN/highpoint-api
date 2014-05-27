@@ -1,0 +1,21 @@
+<% @require LayoutTemplate = './layout' %>
+
+<% @template Page %>
+<% @inherits LayoutTemplate %>
+
+
+<% @block contentInternal { %>
+<h2 id="get">Получение настроек</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/settings</div>
+</div>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    settings: <a href="<%-this.routePath('datatypes')%>#Settings">Settings</a><%-'\n  '%>
+  }
+}
+</pre>
+<% @block contentInternal } %>

@@ -1,0 +1,85 @@
+<% @require LayoutTemplate = './layout' %>
+
+<% @template Page %>
+<% @inherits LayoutTemplate %>
+
+
+<% @block contentInternal { %>
+<h2>Получение данных о пользователе</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/me</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    user: <a href="<%-this.routePath('datatypes')%>#MyUser">MyUser</a><%-'\n  '%>
+  }
+}
+</pre>
+
+<h2>Получение настроек текущего пользователя</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/me/settings</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    settings: <a href="<%-this.routePath('datatypes')%>#MySettings">MySettings</a><%-'\n  '%>
+  }
+}
+</pre>
+
+<h2>Обновление настроек фильтра текущего пользователя</h2>
+<div class='request'>
+  <div class='method'>PUT</div>
+  <div class='path'>/me/settings/filter</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<table class='params'>
+  <caption>PUT параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>cityIds</code></td>
+      <td><code>Array.&lt;uint&gt;=</code></td>
+      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#City">городов</a></td>
+    </tr>
+    <tr>
+      <td><code>genders</code></td>
+      <td><code>Array.&lt;<a href="<%-this.routePath('datatypes')%>#Gender">Gender</a>&gt;=</code></td>
+      <td>Пол</td>
+    </tr>
+    <tr>
+      <td><code>maxAge</code></td>
+      <td><code>uint=</code></td>
+      <td>Максимальный возраст</td>
+    </tr>
+    <tr>
+      <td><code>minAge</code></td>
+      <td><code>uint=</code></td>
+      <td>Минимальный возраст</td>
+    </tr>
+    <tr>
+      <td><code>viewType</code></td>
+      <td><code><a href="<%-this.routePath('datatypes')%>#FilterViewType">FilterViewType</a>=</code></td>
+      <td>Режим просмотра пользователей</td>
+    </tr>
+  </tbody>
+</table>
+<p>Ответ:</p>
+<pre js>
+{}
+</pre>
+<% @block contentInternal } %>
