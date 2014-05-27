@@ -48,7 +48,7 @@
       var url = item.getUrl();
       var childs = item.getChilds();
     %>
-    <div class='item'>
+    <div class='item<% if (url && d.url == url) { %> item-selected<% } %>'>
       <% if (url && d.url != url) { %>
         <a href="<%-this.relativePath(url)%>">
       <% } %>

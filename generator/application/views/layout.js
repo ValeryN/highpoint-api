@@ -77,7 +77,19 @@ Layout.prototype.renderBlockNavigationItems = function (items) { // @44:1
       var childs = item.getChilds();
 
   self.writer.write(
-    '<div class=\'item\'>'
+    '<div class=\'item'
+  ); // @51:21
+
+  if (url && d.url == url) {
+
+  self.writer.write(
+    ' item-selected'
+  ); // @51:67
+
+  }
+
+  self.writer.write(
+    '\'>'
   ); // @52:7
 
   if (url && d.url != url) {

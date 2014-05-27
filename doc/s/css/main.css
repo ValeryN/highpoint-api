@@ -154,8 +154,13 @@ p {
 }
 
 .navigation .item {
+  color: #000;
   margin: 0 0 .4em;
   padding: 0;
+}
+
+.navigation .item-selected {
+  color: #f00;
 }
 
 .navigation a,
