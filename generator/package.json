@@ -1,0 +1,23 @@
+{
+  "name": "hp-api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./application/index.js"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "async": ">=0.1.22",
+    "body-parser": "*",
+    "errorhandler": "*",
+    "express": "*",
+    "gulp": "*",
+    "method-override": "*",
+    "mkdirp": "*",
+    "morgan": "*",
+    "ncp": "*",
+    "ojster": "*"
+  }
+}

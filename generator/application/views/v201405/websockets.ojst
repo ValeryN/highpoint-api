@@ -1,0 +1,9 @@
+<% @require LayoutTemplate = '../layout' %>
+
+<% @template Page %>
+<% @inherits LayoutTemplate %>
+
+
+<% @block contentInternal { %>
+<p>Для соединения с чат-сервером используется библиотека <a href="http://socket.io/">socket.io</a>. <a href="<%-this.routePath('datatypes')%>#Settings_webSocketUrls">Адреса подключения</a> можно получить при <a href="<%-this.routePath('settings')%>#get">запросе настроек приложения</a>.</p>
+<% @block contentInternal } %>
