@@ -27,10 +27,6 @@ code {
   white-space: nowrap;
 }
 
-code.block {
-  white-space: pre-wrap;
-}
-
 h1 {
   border-bottom: 1px solid #eee;
   font-size: 2em;
@@ -67,6 +63,14 @@ pre {
   margin: 0 0 2em;
   overflow: auto;
   padding: 0.5em 1em;
+}
+
+pre.inline {
+  background: transparent;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
 }
 
 pre a,

@@ -14,6 +14,7 @@
     "errorhandler": "*",
     "express": "*",
     "gulp": "*",
+    "htmltidy": "*",
     "method-override": "*",
     "mkdirp": "*",
     "morgan": "*",

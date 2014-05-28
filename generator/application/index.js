@@ -34,7 +34,15 @@ var getRoute = function(navigation, item) {
       template.setPageAbsPath(url);
       template.setRoutePaths(routePaths);
       template.setScope(item.getScope());
-      res.send(200, template.render());
+      var html = template.render();
+      var tidy = require('htmltidy').tidy;
+      tidy(html, {
+        //indent: true
+      }, function(err, html) {
+        if (err) return next(err);
+
+        res.send(200, html);
+      });
     };
   }
 

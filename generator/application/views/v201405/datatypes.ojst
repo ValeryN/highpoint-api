@@ -17,12 +17,12 @@
   <tbody>
     <tr>
       <td><code>highCrop</code></td>
-      <td><code class="block">{
+      <td><pre class="inline">{
   left: uint,
   top: uint,
   width: uint,
   height: uint
-}</code></td>
+}</pre></td>
       <td>Параметры кропа изображения с пропорциями 3:4: координаты левого верхнего угла, ширина и высота</td>
     </tr>
     <tr>
@@ -37,18 +37,79 @@
     </tr>
     <tr>
       <td><code>squareCrop</code></td>
-      <td><code class="block">{
+      <td><pre class="inline">{
   left: uint,
   top: uint,
   width: uint,
   height: uint
-}</code></td>
+}</pre></td>
       <td>Параметры кропа квадратного изображения: координаты левого верхнего угла, ширина и высота</td>
     </tr>
     <tr>
       <td><code>squareImage</code></td>
       <td><code><a href="#ImageEncoded">ImageEncoded</a></code></td>
       <td>Квадратное изображение аватара</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="CareerItem">CareerItem — достижение в карьере</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор города</td>
+    </tr>
+    <tr>
+      <td><code>companyId</code></td>
+      <td><code>uint=</code></td>
+      <td>Идентификатор <a href="#Company">компании</a></td>
+    </tr>
+    <tr>
+      <td><code>fromYear</code></td>
+      <td><code>uint</code></td>
+      <td>Год начала</td>
+    </tr>
+    <tr>
+      <td><code>post</code></td>
+      <td><code>uint=</code></td>
+      <td>Идентификатор <a href="#CareerPost">должности</a></td>
+    </tr>
+    <tr>
+      <td><code>toYear</code></td>
+      <td><code>uint</code></td>
+      <td>Год окончания=</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="CareerPost">CareerPost — должность</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор должности</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td><code>string</code></td>
+      <td>Название</td>
     </tr>
   </tbody>
 </table>
@@ -91,6 +152,29 @@
   </tbody>
 </table>
 
+<h2 id="Company">Company — компания</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор компании</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td><code>string</code></td>
+      <td>Название</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="Country">Country — страна</h2>
 <table class='params'>
   <thead>
@@ -124,11 +208,67 @@
   </tbody>
 </table>
 
+<h2 id="Currency">Currency — валюта</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Константа</th>
+      <th>Значение</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>USD</code></td>
+      <td><code>'usd'</code></td>
+      <td>Американские доллары. Вычисляется по формуле: <code>amount / 1 000 000</code></td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="Date">Date — дата</h2>
 <p>Представляет собой строку в формате ISO 8601. Например, <code>'2012-08-02'</code></p>
 
 <h2 id="DateTime">DateTime — дата и время</h2>
 <p>Представляет собой строку в формате ISO 8601. Например, <code>'2012-08-02 00:02:56'</code></p>
+
+<h2 id="EducationItem">EducationItem — образование</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор образования</td>
+    </tr>
+    <tr>
+      <td><code>fromYear</code></td>
+      <td><code>uint</code></td>
+      <td>Год начала обучения</td>
+    </tr>
+    <tr>
+      <td><code>schoolId</code></td>
+      <td><code>uint=</code></td>
+      <td>Идентификатор <a href="#School">учебного заведения</a></td>
+    </tr>
+    <tr>
+      <td><code>specialityId</code></td>
+      <td><code>uint=</code></td>
+      <td>Идентификатор <a href="#Speciality">специальности</a></td>
+    </tr>
+    <tr>
+      <td><code>toYear</code></td>
+      <td><code>uint=</code></td>
+      <td>Год завершения обучения</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="Error">Error — ошибка</h2>
 <table class='params'>
@@ -404,6 +544,29 @@
     <tr>
       <td><code>'s1500'</code></td>
       <td>Изображение масштабируется с сохранением пропорций, максимальный размер: 1000x1000. Для фотографий</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="Language">Language — язык</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор языка</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td><code>string</code></td>
+      <td>Название</td>
     </tr>
   </tbody>
 </table>
@@ -696,6 +859,34 @@
   </tbody>
 </table>
 
+<h2 id="Place">Place — место</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор места</td>
+    </tr>
+    <tr>
+      <td><code>cityId</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор <a href="#City">города</a></td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td><code>string</code></td>
+      <td>Название</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="Point">Point — поинт</h2>
 <table class='params'>
   <thead>
@@ -713,8 +904,13 @@
     </tr>
     <tr>
       <td><code>createdAt</code></td>
-      <td><code><a href="#Date">Date</a></code></td>
+      <td><code><a href="#DateTime">DateTime</a></code></td>
       <td>Дата и время создания</td>
+    </tr>
+    <tr>
+      <td><code>liked</code></td>
+      <td><code>boolean</code></td>
+      <td>Залайкал ли текущий пользователь поинт</td>
     </tr>
     <tr>
       <td><code>text</code></td>
@@ -728,8 +924,31 @@
     </tr>
     <tr>
       <td><code>validTo</code></td>
-      <td><code><a href="#Date">Date</a></code></td>
+      <td><code><a href="#DateTime">DateTime</a></code></td>
       <td>Дата и время окончания действия</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="Price">Price — цена</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>amount</code></td>
+      <td><code>uint</code></td>
+      <td>Сумма</td>
+    </tr>
+    <tr>
+      <td><code>currency</code></td>
+      <td><code><a href="#Currency">Currency</a></code></td>
+      <td>Валюта</td>
     </tr>
   </tbody>
 </table>
@@ -825,6 +1044,29 @@
   </tbody>
 </table>
 
+<h2 id="School">School — учебное заведение</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор учебного заведения</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td><code>string</code></td>
+      <td>Название</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="Settings">Settings — настройки приложения</h2>
 <table class='params'>
   <thead>
@@ -837,27 +1079,50 @@
   <tbody>
     <tr>
       <td><code>avatar</code></td>
-      <td><code class="block">{
+      <td><pre class="inline">{
   maxFileSize: uint,
   minImageSize: {
     width: uint,
     height: uint
   }
-}</code></td>
+}</pre></td>
       <td>Максимальный размер файла в байтах и минимальный размер изображения</td>
     </tr>
     <tr>
       <td><code>event</code></td>
-      <td><code class="block">{
+      <td><pre class="inline">{
   maxPeriod: uint,
   minPeriod: uint
-}</code></td>
+}</pre></td>
       <td>Максимальный и минимальный период действия поинта в минутах</td>
     </tr>
     <tr id="Settings_webSocketUrls">
       <td><code>webSocketUrls</code></td>
       <td><code>Array.&lt;string&gt;</code></td>
       <td>Адреса для подключения через веб-сокеты</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="Speciality">Speciality — специальность</h2>
+<table class='params'>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор специальности</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td><code>string</code></td>
+      <td>Название</td>
     </tr>
   </tbody>
 </table>
@@ -898,14 +1163,49 @@
       <td>Название города, если его еще нет в базе городов</td>
     </tr>
     <tr>
+      <td><code>career</code></td>
+      <td><code>Array.&lt;<a href="#CareerItem">CareerItem</a>&gt;</code></td>
+      <td>Карьера</td>
+    </tr>
+    <tr>
+      <td><code>education</code></td>
+      <td><code>Array.&lt;<a href="#EducationItem">EducationItem</a>&gt;</code></td>
+      <td>Образование</td>
+    </tr>
+    <tr>
       <td><code>email</code></td>
       <td><code>string=</code></td>
       <td>Электронная почта</td>
     </tr>
     <tr>
+      <td><code>favoriteCities</code></td>
+      <td><code>Array.&lt;<a href="#City">City</a>&gt;</code></td>
+      <td>Любимые города</td>
+    </tr>
+    <tr>
+      <td><code>favoritePlaces</code></td>
+      <td><code>Array.&lt;<a href="#Place">Place</a>&gt;</code></td>
+      <td>Любимые места</td>
+    </tr>
+    <tr>
       <td><code>gender</code></td>
       <td><code><a href="#Gender">Gender</a></code></td>
       <td>Пол</td>
+    </tr>
+    <tr>
+      <td><code>languages</code></td>
+      <td><code>Array.&lt;<a href="#Language">Language</a>&gt;</code></td>
+      <td>Языки</td>
+    </tr>
+    <tr>
+      <td><code>maxEntertainmentPrice</code></td>
+      <td><code><a href="#Price">Price</a>=</code></td>
+      <td>Максимальные траты на развлечения за вечер</td>
+    </tr>
+    <tr>
+      <td><code>minEntertainmentPrice</code></td>
+      <td><code><a href="#Price">Price</a>=</code></td>
+      <td>Минимальные траты на развлечения за вечер</td>
     </tr>
     <tr>
       <td><code>name</code></td>
