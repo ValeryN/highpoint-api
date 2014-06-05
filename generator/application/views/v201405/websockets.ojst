@@ -5,5 +5,8 @@
 
 
 <% @block contentInternal { %>
-<p>Для соединения с чат-сервером используется библиотека <a href="http://socket.io/">socket.io</a>. <a href="<%-this.routePath('datatypes')%>#Settings_webSocketUrls">Адреса подключения</a> можно получить при <a href="<%-this.routePath('settings')%>#get">запросе настроек приложения</a>.</p>
+<p>
+  Для соединения с чат-сервером используется библиотека <a href="http://socket.io/">socket.io</a>. <a href="<%-this.routePath('datatypes')%>#Settings_webSocketUrls">Адреса подключения</a> можно получить при <a href="<%-this.routePath('settings')%>#get">запросе настроек приложения</a>.
+  При открытии соединения в HTTP запрос добавляется GET параметр <code>token</code>, полученный при <a href="<%-this.routePath('auth')%>#signin">авторизации пользователя</a>.
+</p>
 <% @block contentInternal } %>

@@ -14,32 +14,22 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
   var self = this;
   var d = this.data, vars = this.vars;
   self.writer.write(
-    '<p>Все данные отправляются в первом аргументе как JSON-объект.</p><h2>Закончилась активность пользователя</h2><div class=\'request\'><div class=\'path\'>activityEnd</div></div><p>Команда должна отправляться через 90 секунд после неактивности пользователя.</p><h2>Пользователь стал активен</h2><div class=\'request\'><div class=\'path\'>activityStart</div></div><h2>Отправить сообщение</h2><div class=\'request\'><div class=\'path\'>sendMessage</div><div class=\'auth\'>Требуется <a href="',
-    this.routePath('auth'), // @24:40
-    '#signin">авторизация</a></div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>uint</code></td><td>Идентификатор, который отправится обратно клиенту с подтверждением отправки сообщения</td></tr><tr><td><code>body</code></td><td><code><a href="',
-    this.routePath('datatypes'), // @43:26
+    '<p>Все данные отправляются в первом аргументе как JSON-объект.</p><h2>Закончилась активность пользователя</h2><div class=\'request\'><div class=\'path\'>activityEnd</div></div><p>Команда должна отправляться через 90 секунд после неактивности пользователя.</p><h2>Пользователь стал активен</h2><div class=\'request\'><div class=\'path\'>activityStart</div></div><h2>Отправить сообщение</h2><div class=\'request\'><div class=\'path\'>sendMessage</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>uint</code></td><td>Идентификатор, который отправится обратно клиенту с подтверждением отправки сообщения</td></tr><tr><td><code>body</code></td><td><code><a href="',
+    this.routePath('datatypes'), // @42:26
     '#MessageBody">MessageBody</a></code></td><td>Тело сообщения</td></tr><tr><td><code>destinationId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @49:34
-    '#User">получателя</a></td></tr></tbody></table><h2>Прочтение сообщений текущим пользователем</h2><div class=\'request\'><div class=\'path\'>messagesRead</div><div class=\'auth\'>Требуется <a href="',
-    this.routePath('auth'), // @57:40
-    '#signin">авторизация</a></div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>sourceId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @72:34
+    this.routePath('datatypes'), // @48:34
+    '#User">получателя</a></td></tr></tbody></table><h2>Прочтение сообщений текущим пользователем</h2><div class=\'request\'><div class=\'path\'>messagesRead</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>sourceId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @70:34
     '#User">пользователя</a>, чьи сообщения прочитаны</td></tr><tr><td><code>date</code></td><td><code><a href="',
-    this.routePath('datatypes'), // @76:26
-    '#DateTime">DateTime</a></code></td><td>Дата и время, до которых прочитаны сообщения</td></tr></tbody></table><p>При прочтении сообщений пользователем клиент должен оповестить об этом сервер, иначе эти сообщения будут повторно выданы как непрочитанные.</p><h2>Текущий пользователь закончил печатать сообщение</h2><div class=\'request\'><div class=\'path\'>typingFinish</div><div class=\'auth\'>Требуется <a href="',
-    this.routePath('auth'), // @86:40
-    '#signin">авторизация</a></div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>destinationId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @101:34
-    '#User">пользователя</a>, которому печаталось сообщение</td></tr></tbody></table><h2>Текущий пользователь начал печатать сообщение</h2><div class=\'request\'><div class=\'path\'>typingStart</div><div class=\'auth\'>Требуется <a href="',
-    this.routePath('auth'), // @109:40
-    '#signin">авторизация</a></div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>destinationId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @124:34
-    '#User">пользователя</a>, которому печатается сообщение</td></tr></tbody></table><h2>Прочтение уведомления</h2><div class=\'request\'><div class=\'path\'>notificationRead</div><div class=\'auth\'>Требуется <a href="',
-    this.routePath('auth'), // @132:40
-    '#signin">авторизация</a></div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @147:34
+    this.routePath('datatypes'), // @74:26
+    '#DateTime">DateTime</a></code></td><td>Дата и время, до которых прочитаны сообщения</td></tr></tbody></table><p>При прочтении сообщений пользователем клиент должен оповестить об этом сервер, иначе эти сообщения будут повторно выданы как непрочитанные.</p><h2>Текущий пользователь закончил печатать сообщение</h2><div class=\'request\'><div class=\'path\'>typingFinish</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>destinationId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @98:34
+    '#User">пользователя</a>, которому печаталось сообщение</td></tr></tbody></table><h2>Текущий пользователь начал печатать сообщение</h2><div class=\'request\'><div class=\'path\'>typingStart</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>destinationId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @120:34
+    '#User">пользователя</a>, которому печатается сообщение</td></tr></tbody></table><h2>Прочтение уведомления</h2><div class=\'request\'><div class=\'path\'>notificationRead</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @142:34
     '#Notification">уведомления</a></td></tr></tbody></table><h2>Прочтение всех уведомлений</h2><div class=\'request\'><div class=\'path\'>allNotificationsRead</div></div>'
   );
-}; // @156:1
+}; // @151:1
 
 module.exports = Page;

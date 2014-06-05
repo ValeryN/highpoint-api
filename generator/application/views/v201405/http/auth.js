@@ -18,18 +18,20 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @47:20
     '#ErrorCode_WRONG_USER_OR_PASSWORD\'>WRONG_USER_OR_PASSWORD</a>',
     '\n  ', // @47:113
-    '}\n}</pre><p>В случае успешной авторизации и выдаче токена можно делать запросы и отправлять команды с помощью веб-сокетов, требующие авторизации.</p><p>В запросах нужно добавлять заголовок:</p><pre>Authorization: Bearer &lt;token&gt;</pre><p>В командах с помощью веб-сокетов первому аргументу добавляется поле <code>token</code>. Примеры:</p><pre>notificationRead({\n  id: 25026,\n  token: &lt;token&gt;\n});\nallNotificationsRead({\n  token: &lt;token&gt;\n});</pre><p>Токен имеет ограниченное время жизни. По его истечению на любой запрос, требующий авторизации, выдается ответ со статусом 401 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
-    this.routePath('datatypes'), // @70:20
+    '}\n}</pre><p>В случае успешной авторизации и выдачи токена можно делать запросы и <a href="',
+    this.routePath('websockets'), // @51:82
+    '">открывать соединение с помощью веб-сокетов</a>.</p><p>В запросах нужно добавлять заголовок:</p><pre>Authorization: Bearer &lt;token&gt;</pre><p>Токен имеет ограниченное время жизни. По его истечению на любой запрос, требующий авторизации, выдается ответ со статусом 401 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
+    this.routePath('datatypes'), // @60:20
     '#ErrorCode_WRONG_TOKEN\'>WRONG_TOKEN</a>',
-    '\n  ', // @70:91
+    '\n  ', // @60:91
     '}\n}</pre><p>В соединении с помощью веб-сокетов приходит событие <code><a href="',
-    this.routePath('server2client'), // @74:71
+    this.routePath('server2client'), // @64:71
     '#error">error</a></code> со следующим содержимым поля <code>error</code>:</p><pre js>{\n  code: <a href=\'',
-    this.routePath('datatypes'), // @77:18
+    this.routePath('datatypes'), // @67:18
     '#ErrorCode_WRONG_TOKEN\'>WRONG_TOKEN</a>',
-    '\n', // @77:89
-    '}</pre><p>В случае ошибки нужно снова произвести процедуру авторизации.</p><h2>Выход</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/signout</div></div><p>Ответ:</p><pre js>{}</pre><h2>Регистрация</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/signup</div></div><p>Ответ:</p><pre js>{}</pre>'
+    '\n', // @67:89
+    '}</pre><p>В случае ошибки нужно снова произвести процедуру авторизации.</p><h2>Регистрация</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/signup</div></div><p>Ответ:</p><pre js>{}</pre>'
   );
-}; // @103:1
+}; // @82:1
 
 module.exports = Page;

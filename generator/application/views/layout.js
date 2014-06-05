@@ -22,53 +22,55 @@ Layout.prototype.renderBlockMain = function () { // @7:1
   ); // @16:5
   self.renderBlockPage(); // @16:5
   self.writer.write(
-    '</body></html>'
+    '<script src=\'',
+    this.relativePath('/s/js/main.js'), // @17:18
+    '\'></script></body></html>'
   );
-}; // @19:1
+}; // @20:1
 
 
-Layout.prototype.renderBlockPage = function () { // @22:1
+Layout.prototype.renderBlockPage = function () { // @23:1
   var self = this;
   var d = this.data, vars = this.vars;
-  self.renderBlockContent(); // @23:1
-  self.renderBlockSidebar(); // @24:1
-}; // @25:1
+  self.renderBlockContent(); // @24:1
+  self.renderBlockSidebar(); // @25:1
+}; // @26:1
 
 
-Layout.prototype.renderBlockContent = function () { // @28:1
+Layout.prototype.renderBlockContent = function () { // @29:1
   var self = this;
   var d = this.data, vars = this.vars;
   self.writer.write(
     '<div class="content"><h1>',
-    d.header, // @30:7
+    d.header, // @31:7
     '</h1>'
-  ); // @31:3
-  self.renderBlockContentInternal(); // @31:3
+  ); // @32:3
+  self.renderBlockContentInternal(); // @32:3
   self.writer.write(
     '</div>'
   );
-}; // @33:1
+}; // @34:1
 
 
-Layout.prototype.renderBlockSidebar = function () { // @36:1
+Layout.prototype.renderBlockSidebar = function () { // @37:1
   var self = this;
   var d = this.data, vars = this.vars;
   self.writer.write(
     '<div class=\'sidebar\'>'
-  ); // @38:3
-  self.renderBlockNavigationItems(d.navigation); // @38:3
+  ); // @39:3
+  self.renderBlockNavigationItems(d.navigation); // @39:3
   self.writer.write(
     '<div class=\'toggle\'></div></div>'
   );
-}; // @41:1
+}; // @42:1
 
 
-Layout.prototype.renderBlockNavigationItems = function (items) { // @44:1
+Layout.prototype.renderBlockNavigationItems = function (items) { // @45:1
   var self = this;
   var d = this.data, vars = this.vars;
   self.writer.write(
     '<div class=\'navigation\'>'
-  ); // @46:3
+  ); // @47:3
 
   items.forEach(function(item) {
 
@@ -78,58 +80,58 @@ Layout.prototype.renderBlockNavigationItems = function (items) { // @44:1
 
   self.writer.write(
     '<div class=\'item'
-  ); // @51:21
+  ); // @52:21
 
   if (url && d.url == url) {
 
   self.writer.write(
     ' item-selected'
-  ); // @51:67
+  ); // @52:67
 
   }
 
   self.writer.write(
     '\'>'
-  ); // @52:7
+  ); // @53:7
 
   if (url && d.url != url) {
 
   self.writer.write(
     '<a href="',
-    this.relativePath(url), // @53:18
+    this.relativePath(url), // @54:18
     '">'
-  ); // @54:7
+  ); // @55:7
 
   }
 
   self.writer.write(
-    item.getNavigationTitle() // @56:7
-  ); // @58:7
+    item.getNavigationTitle() // @57:7
+  ); // @59:7
 
   if (url && d.url != url) {
 
   self.writer.write(
     '</a>'
-  ); // @60:7
+  ); // @61:7
 
   }
 
 
   if (childs.length) {
 
-  self.renderBlockNavigationItems(childs); // @63:9
+  self.renderBlockNavigationItems(childs); // @64:9
 
   }
 
   self.writer.write(
     '</div>'
-  ); // @66:3
+  ); // @67:3
 
   }, this);
 
   self.writer.write(
     '</div>'
   );
-}; // @68:1
+}; // @69:1
 
 module.exports = Layout;

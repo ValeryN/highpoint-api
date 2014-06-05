@@ -15,11 +15,13 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
   var d = this.data, vars = this.vars;
   self.writer.write(
     '<p>Для соединения с чат-сервером используется библиотека <a href="http://socket.io/">socket.io</a>. <a href="',
-    this.routePath('datatypes'), // @8:110
+    this.routePath('datatypes'), // @9:109
     '#Settings_webSocketUrls">Адреса подключения</a> можно получить при <a href="',
-    this.routePath('settings'), // @8:218
-    '#get">запросе настроек приложения</a>.</p>'
+    this.routePath('settings'), // @9:217
+    '#get">запросе настроек приложения</a>.\n  При открытии соединения в HTTP запрос добавляется GET параметр <code>token</code>, полученный при <a href="',
+    this.routePath('auth'), // @10:110
+    '#signin">авторизации пользователя</a>.</p>'
   );
-}; // @9:1
+}; // @12:1
 
 module.exports = Page;

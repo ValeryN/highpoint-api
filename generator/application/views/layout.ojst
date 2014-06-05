@@ -14,6 +14,7 @@
   </head>
   <body>
     <% @call page %>
+    <script src='<%-this.relativePath('/s/js/main.js')%>'></script>
   </body>
 </html>
 <% @block main } %>

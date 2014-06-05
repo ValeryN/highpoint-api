@@ -152,8 +152,11 @@ Template.prototype.routePath = function(routeName, opt_scope) {
     routeName = scope + '/' + routeName;
   }
 
-  var absPath = this._routePaths && this._routePaths[routeName] ?
-    this._routePaths[routeName] : '';
+  if (!this._routePaths || !this._routePaths[routeName]) {
+    throw new Error('Route name ' + routeName + ' not found');
+  }
+
+  var absPath = this._routePaths[routeName];
 
   return absPath ? this.relativePath(absPath) : absPath;
 };
