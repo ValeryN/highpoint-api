@@ -24,28 +24,24 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @54:26
     '#MyUser">MyUser</a></code></td><td>Данные текущего пользователя</td></tr></tbody></table><h2>Новое сообщение от пользователя</h2><div class=\'request\'><div class=\'path\'>message</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>message</code></td><td><code><a href="',
     this.routePath('datatypes'), // @76:26
-    '#Message">Message</a></code></td><td>Сообщение</td></tr></tbody></table><h2>Сообщения прочитаны</h2><div class=\'request\'><div class=\'path\'>messagesRead</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>destinationId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @99:34
-    '#User">получателя</a></td></tr><tr><td><code>date</code></td><td><code><a href="',
-    this.routePath('datatypes'), // @103:26
-    '#DateTime">DateTime</a></code></td><td>Дата и время, до которых прочитаны сообщения</td></tr></tbody></table><h2>Сообщение отправлено</h2><div class=\'request\'><div class=\'path\'>messageSent</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>destinationId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @126:34
-    '#User">получателя</a></td></tr><tr><td><code>message</code></td><td><code><a href="',
-    this.routePath('datatypes'), // @130:26
+    '#Message">Message</a></code></td><td>Сообщение</td></tr></tbody></table><h2>Сообщения прочитаны</h2><div class=\'request\'><div class=\'path\'>messagesRead</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>date</code></td><td><code><a href="',
+    this.routePath('datatypes'), // @98:26
+    '#DateTime">DateTime</a></code></td><td>Дата и время, до которых прочитаны сообщения</td></tr><tr><td><code>destinationId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @104:34
+    '#User">получателя</a></td></tr></tbody></table><h2>Сообщение отправлено</h2><div class=\'request\'><div class=\'path\'>messageSent</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>message</code></td><td><code><a href="',
+    this.routePath('datatypes'), // @125:26
     '#Message">Message</a></code></td><td>Сообщение</td></tr></tbody></table><h2>Пользователь ушел в оффлайн</h2><div class=\'request\'><div class=\'path\'>userOffline</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @153:34
+    this.routePath('datatypes'), // @148:34
     '#User">пользователя</a></td></tr></tbody></table><h2>Пользователь появился в онлайне</h2><div class=\'request\'><div class=\'path\'>userOnline</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @175:34
+    this.routePath('datatypes'), // @170:34
     '#User">пользователя</a></td></tr></tbody></table><h2>Пользователь закончил писать сообщение</h2><div class=\'request\'><div class=\'path\'>typingFinish</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @197:34
+    this.routePath('datatypes'), // @192:34
     '#User">пользователя</a></td></tr></tbody></table><h2>Пользователь начал писать сообщение</h2><div class=\'request\'><div class=\'path\'>typingStart</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @219:34
+    this.routePath('datatypes'), // @214:34
     '#User">пользователя</a></td></tr></tbody></table><h2>Новое уведомление</h2><div class=\'request\'><div class=\'path\'>notification</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>notification</code></td><td><code><a href="',
-    this.routePath('datatypes'), // @240:26
-    '#Notification">Notification</a></code></td><td>Уведомление</td></tr></tbody></table><h2>Обновление настроек текущего пользователя</h2><div class=\'request\'><div class=\'path\'>mySettingsUpdate</div></div><table class=\'params\'><caption>Данные</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>settings</code></td><td><code><a href="',
-    this.routePath('datatypes'), // @262:26
-    '#MySettings">MySettings</a></code></td><td>Новые настройки пользователя</td></tr></tbody></table>'
+    this.routePath('datatypes'), // @235:26
+    '#Notification">Notification</a></code></td><td>Уведомление</td></tr></tbody></table>'
   );
-}; // @267:1
+}; // @240:1
 
 module.exports = Page;
