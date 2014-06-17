@@ -20,22 +20,16 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @18:20
     '#MyUser">MyUser</a>',
     '\n  ', // @18:71
-    '}\n}</pre><h2>Получение настроек текущего пользователя</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/me/settings</div><div class=\'auth\'>Требуется <a href="',
+    '}\n}</pre><h2>Обновление настроек фильтра текущего пользователя</h2><div class=\'request\'><div class=\'method\'>PUT</div><div class=\'path\'>/v201405/me/filter</div><div class=\'auth\'>Требуется <a href="',
     this.routePath('auth'), // @27:40
-    '#signin">авторизация</a></div></div><p>Ответ:</p><pre js>{\n  data: {\n    settings: <a href="',
-    this.routePath('datatypes'), // @33:24
-    '#MySettings">MySettings</a>',
-    '\n  ', // @33:83
-    '}\n}</pre><h2>Обновление настроек фильтра текущего пользователя</h2><div class=\'request\'><div class=\'method\'>PUT</div><div class=\'path\'>/v201405/me/settings/filter</div><div class=\'auth\'>Требуется <a href="',
-    this.routePath('auth'), // @42:40
-    '#signin">авторизация</a></div></div><table class=\'params\'><caption>PUT параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>cityIds</code></td><td><code>Array.&lt;uint&gt;=</code></td><td>Идентификаторы <a href="',
-    this.routePath('datatypes'), // @57:35
-    '#City">городов</a></td></tr><tr><td><code>genders</code></td><td><code>Array.&lt;<a href="',
-    this.routePath('datatypes'), // @61:36
-    '#Gender">Gender</a>&gt;=</code></td><td>Пол</td></tr><tr><td><code>maxAge</code></td><td><code>uint=</code></td><td>Максимальный возраст</td></tr><tr><td><code>minAge</code></td><td><code>uint=</code></td><td>Минимальный возраст</td></tr><tr><td><code>viewType</code></td><td><code><a href="',
-    this.routePath('datatypes'), // @76:26
+    '#signin">авторизация</a></div></div><table class=\'params\'><caption>PUT параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>cityIds</code></td><td><code>string=</code></td><td>Идентификаторы <a href="',
+    this.routePath('datatypes'), // @42:35
+    '#City">городов</a>, разделенных запятыми</td></tr><tr><td><code>genders</code></td><td><code>string=</code></td><td>Идентификаторы <a href="',
+    this.routePath('datatypes'), // @47:35
+    '#Gender">полов</a>, разделенных запятыми</td></tr><tr><td><code>maxAge</code></td><td><code>uint=</code></td><td>Максимальный возраст</td></tr><tr><td><code>minAge</code></td><td><code>uint=</code></td><td>Минимальный возраст</td></tr><tr><td><code>viewType</code></td><td><code><a href="',
+    this.routePath('datatypes'), // @61:26
     '#FilterViewType">FilterViewType</a>=</code></td><td>Режим просмотра пользователей</td></tr></tbody></table><p>Ответ:</p><pre js>{}</pre>'
   );
-}; // @85:1
+}; // @70:1
 
 module.exports = Page;

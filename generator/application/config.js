@@ -44,6 +44,12 @@ module.exports = {
               title: 'Поинты',
               url: '/v201405/http/points'
             },
+            {
+              name: 'geo',
+              template: 'v201405/http/geo',
+              title: 'Географические локации',
+              url: '/v201405/http/geo',
+            },
           ],
         },
         {

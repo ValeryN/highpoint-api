@@ -94,14 +94,14 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>destinationId</code></td>
-      <td><code>uint</code></td>
-      <td>Идентификатор <a href="<%-this.routePath('datatypes')%>#User">получателя</a></td>
-    </tr>
-    <tr>
       <td><code>date</code></td>
       <td><code><a href="<%-this.routePath('datatypes')%>#DateTime">DateTime</a></code></td>
       <td>Дата и время, до которых прочитаны сообщения</td>
+    </tr>
+    <tr>
+      <td><code>destinationId</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор <a href="<%-this.routePath('datatypes')%>#User">получателя</a></td>
     </tr>
   </tbody>
 </table>
@@ -120,11 +120,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code>destinationId</code></td>
-      <td><code>uint</code></td>
-      <td>Идентификатор <a href="<%-this.routePath('datatypes')%>#User">получателя</a></td>
-    </tr>
     <tr>
       <td><code>message</code></td>
       <td><code><a href="<%-this.routePath('datatypes')%>#Message">Message</a></code></td>
@@ -239,28 +234,6 @@
       <td><code>notification</code></td>
       <td><code><a href="<%-this.routePath('datatypes')%>#Notification">Notification</a></code></td>
       <td>Уведомление</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2>Обновление настроек текущего пользователя</h2>
-<div class='request'>
-  <div class='path'>mySettingsUpdate</div>
-</div>
-<table class='params'>
-  <caption>Данные</caption>
-  <thead>
-    <tr>
-      <th>Название</th>
-      <th>Тип</th>
-      <th>Описание</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>settings</code></td>
-      <td><code><a href="<%-this.routePath('datatypes')%>#MySettings">MySettings</a></code></td>
-      <td>Новые настройки пользователя</td>
     </tr>
   </tbody>
 </table>

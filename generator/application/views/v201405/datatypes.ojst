@@ -66,7 +66,7 @@
     <tr>
       <td><code>id</code></td>
       <td><code>uint</code></td>
-      <td>Идентификатор города</td>
+      <td>Идентификатор достижения</td>
     </tr>
     <tr>
       <td><code>companyId</code></td>
@@ -79,14 +79,14 @@
       <td>Год начала</td>
     </tr>
     <tr>
-      <td><code>post</code></td>
+      <td><code>postId</code></td>
       <td><code>uint=</code></td>
       <td>Идентификатор <a href="#CareerPost">должности</a></td>
     </tr>
     <tr>
       <td><code>toYear</code></td>
-      <td><code>uint</code></td>
-      <td>Год окончания=</td>
+      <td><code>uint=</code></td>
+      <td>Год окончания</td>
     </tr>
   </tbody>
 </table>
@@ -131,7 +131,7 @@
     </tr>
     <tr>
       <td><code>enName</code></td>
-      <td><code>string</code></td>
+      <td><code>string=</code></td>
       <td>Название на английском языке</td>
     </tr>
     <tr>
@@ -192,7 +192,7 @@
     </tr>
     <tr>
       <td><code>enName</code></td>
-      <td><code>string</code></td>
+      <td><code>string=</code></td>
       <td>Название на английском языке</td>
     </tr>
     <tr>
@@ -221,7 +221,7 @@
     <tr>
       <td><code>USD</code></td>
       <td><code>'usd'</code></td>
-      <td>Американские доллары. Вычисляется по формуле: <code>amount / 1 000 000</code></td>
+      <td>Американские доллары. Вычисляется по формуле: <code>amount / 100</code></td>
     </tr>
   </tbody>
 </table>
@@ -313,6 +313,16 @@
       <td><code>3</code></td>
       <td>Неверные параметры запроса</td>
     </tr>
+    <tr id="ErrorCode_SERVER_ERROR">
+      <td><code>SERVER_ERROR</code></td>
+      <td><code>4</code></td>
+      <td>Ошибка сервера</td>
+    </tr>
+    <tr id="ErrorCode_NOT_FOUND">
+      <td><code>NOT_FOUND</code></td>
+      <td><code>5</code></td>
+      <td>Объект не найден</td>
+    </tr>
   </tbody>
 </table>
 
@@ -328,7 +338,7 @@
   <tbody>
     <tr>
       <td><code>cityIds</code></td>
-      <td><code>Array.&lt;uint&gt;</code></td>
+      <td><code>Array.&lt;uint&gt;</code>=</td>
       <td>Идентификаторы <a href="#City">городов</a></td>
     </tr>
     <tr>
@@ -543,7 +553,7 @@
     </tr>
     <tr>
       <td><code>'s1500'</code></td>
-      <td>Изображение масштабируется с сохранением пропорций, максимальный размер: 1000&times;1000. Для фотографий</td>
+      <td>Изображение масштабируется с сохранением пропорций, максимальный размер: 1500&times;1500. Для фотографий</td>
     </tr>
   </tbody>
 </table>
@@ -632,24 +642,6 @@
   </tbody>
 </table>
 
-<h2 id="MySettings">MySettings — настройки текущего пользователя</h2>
-<table class='params'>
-  <thead>
-    <tr>
-      <th>Название</th>
-      <th>Тип</th>
-      <th>Описание</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>filter</code></td>
-      <td><code><a href="#Filter">Filter</a></code></td>
-      <td>Фильтр пользователей</td>
-    </tr>
-  </tbody>
-</table>
-
 <h2 id="MyUser">MyUser — текущий пользователь</h2>
 <table class='params'>
   <thead>
@@ -671,6 +663,11 @@
       <td>Аватар</td>
     </tr>
     <tr>
+      <td><code>career</code></td>
+      <td><code>Array.&lt;<a href="#CareerItem">CareerItem</a>&gt;</code></td>
+      <td>Карьера</td>
+    </tr>
+    <tr>
       <td><code>cityId</code></td>
       <td><code>uint</code></td>
       <td>Идентификатор <a href="#City">города</a></td>
@@ -681,9 +678,19 @@
       <td>Название города, если его еще нет в базе городов</td>
     </tr>
     <tr>
+      <td><code>createdAt</code></td>
+      <td><code><a href="#DateTime">DateTime</a></code></td>
+      <td>Дата и время создания аккаунта</td>
+    </tr>
+    <tr>
       <td><code>dateOfBirth</code></td>
       <td><code><a href="#Date">Date</a></code></td>
       <td>Дата рождения</td>
+    </tr>
+    <tr>
+      <td><code>education</code></td>
+      <td><code>Array.&lt;<a href="#EducationItem">EducationItem</a>&gt;</code></td>
+      <td>Образование</td>
     </tr>
     <tr>
       <td><code>email</code></td>
@@ -691,9 +698,39 @@
       <td>Электронная почта</td>
     </tr>
     <tr>
+      <td><code>favoriteCityIds</code></td>
+      <td><code>Array.&lt;uint&gt;</code></td>
+      <td>Идентификаторы любимых <a href="#City">городов</a></td>
+    </tr>
+    <tr>
+      <td><code>favoritePlaceIds</code></td>
+      <td><code>Array.&lt;uint&gt;</code></td>
+      <td>Идентификаторы любимых <a href="#Place">мест</a></td>
+    </tr>
+    <tr>
+      <td><code>filter</code></td>
+      <td><code><a href="#Filter">Filter</a></code></td>
+      <td>Фильтр показа пользователей</td>
+    </tr>
+    <tr>
       <td><code>gender</code></td>
       <td><code><a href="#Gender">Gender</a></code></td>
       <td>Пол</td>
+    </tr>
+    <tr>
+      <td><code>languageIds</code></td>
+      <td><code>Array.&lt;uint&gt;</code></td>
+      <td>Идентификаторы <a href="#Language">языков</a></td>
+    </tr>
+    <tr>
+      <td><code>maxEntertainmentPrice</code></td>
+      <td><code><a href="#Price">Price</a>=</code></td>
+      <td>Максимальные траты на развлечения за вечер</td>
+    </tr>
+    <tr>
+      <td><code>minEntertainmentPrice</code></td>
+      <td><code><a href="#Price">Price</a>=</code></td>
+      <td>Минимальные траты на развлечения за вечер</td>
     </tr>
     <tr>
       <td><code>name</code></td>
@@ -734,11 +771,6 @@
       <td>Дата и время создания уведомления</td>
     </tr>
     <tr>
-      <td><code>destinationId</code></td>
-      <td><code>uint</code></td>
-      <td>Идентификатор <a href="#User">получателя</a></td>
-    </tr>
-    <tr>
       <td><code>readAt</code></td>
       <td><code><a href="#DateTime">DateTime</a>=</code></td>
       <td>Дата и время прочтения уведомления</td>
@@ -751,7 +783,7 @@
   </tbody>
 </table>
 
-<h2 id="NotificationNewMessage">NotificationNewMessage — уведомление о новом сообщении</h2>
+<h2 id="NotificationMessage">NotificationMessage — уведомление о новом сообщении</h2>
 <p>Объект наследуется от <a href="#Notification">Notification</a> со значением поля <code>type = <a href="#NotificationType_MESSAGE">NotificationType.MESSAGE</a></code>. Дополнительные поля:</p>
 <table class='params'>
   <thead>
@@ -1089,7 +1121,7 @@
       <td>Максимальный размер файла в байтах и минимальный размер изображения</td>
     </tr>
     <tr>
-      <td><code>event</code></td>
+      <td><code>point</code></td>
       <td><pre class="inline">{
   maxPeriod: uint,
   minPeriod: uint
@@ -1153,6 +1185,11 @@
       <td>Аватар</td>
     </tr>
     <tr>
+      <td><code>career</code></td>
+      <td><code>Array.&lt;<a href="#CareerItem">CareerItem</a>&gt;</code></td>
+      <td>Карьера</td>
+    </tr>
+    <tr>
       <td><code>cityId</code></td>
       <td><code>uint=</code></td>
       <td>Идентификатор <a href="#City">города</a></td>
@@ -1161,11 +1198,6 @@
       <td><code>cityName</code></td>
       <td><code>string=</code></td>
       <td>Название города, если его еще нет в базе городов</td>
-    </tr>
-    <tr>
-      <td><code>career</code></td>
-      <td><code>Array.&lt;<a href="#CareerItem">CareerItem</a>&gt;</code></td>
-      <td>Карьера</td>
     </tr>
     <tr>
       <td><code>education</code></td>
@@ -1178,14 +1210,14 @@
       <td>Электронная почта</td>
     </tr>
     <tr>
-      <td><code>favoriteCities</code></td>
-      <td><code>Array.&lt;<a href="#City">City</a>&gt;</code></td>
-      <td>Любимые города</td>
+      <td><code>favoriteCityIds</code></td>
+      <td><code>Array.&lt;uint&gt;</code></td>
+      <td>Идентификаторы любимых <a href="#City">городов</a></td>
     </tr>
     <tr>
-      <td><code>favoritePlaces</code></td>
-      <td><code>Array.&lt;<a href="#Place">Place</a>&gt;</code></td>
-      <td>Любимые места</td>
+      <td><code>favoritePlaceIds</code></td>
+      <td><code>Array.&lt;uint&gt;</code></td>
+      <td>Идентификаторы любимых <a href="#Place">мест</a></td>
     </tr>
     <tr>
       <td><code>gender</code></td>
@@ -1193,9 +1225,9 @@
       <td>Пол</td>
     </tr>
     <tr>
-      <td><code>languages</code></td>
-      <td><code>Array.&lt;<a href="#Language">Language</a>&gt;</code></td>
-      <td>Языки</td>
+      <td><code>languageIds</code></td>
+      <td><code>Array.&lt;uint&gt;</code></td>
+      <td>Идентификаторы <a href="#Language">языков</a></td>
     </tr>
     <tr>
       <td><code>maxEntertainmentPrice</code></td>
@@ -1229,20 +1261,24 @@
 <table class='params'>
   <thead>
     <tr>
+      <th>Константа</th>
       <th>Значение</th>
       <th>Описание</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td><code>PUBLIC</code></td>
       <td><code>1</code></td>
       <td>Публичный</td>
     </tr>
     <tr>
+      <td><code>PRIVATE</code></td>
       <td><code>2</code></td>
       <td>Скрытый</td>
     </tr>
     <tr>
+      <td><code>PERSONAL_DATA</code></td>
       <td><code>3</code></td>
       <td>Только личные данные (расходы, любимые места, языки, образование, карьера)</td>
     </tr>

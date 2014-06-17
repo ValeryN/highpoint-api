@@ -20,25 +20,10 @@
 }
 </pre>
 
-<h2>Получение настроек текущего пользователя</h2>
-<div class='request'>
-  <div class='method'>GET</div>
-  <div class='path'>/v201405/me/settings</div>
-  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
-</div>
-<p>Ответ:</p>
-<pre js>
-{
-  data: {
-    settings: <a href="<%-this.routePath('datatypes')%>#MySettings">MySettings</a><%-'\n  '%>
-  }
-}
-</pre>
-
 <h2>Обновление настроек фильтра текущего пользователя</h2>
 <div class='request'>
   <div class='method'>PUT</div>
-  <div class='path'>/v201405/me/settings/filter</div>
+  <div class='path'>/v201405/me/filter</div>
   <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
@@ -53,13 +38,13 @@
   <tbody>
     <tr>
       <td><code>cityIds</code></td>
-      <td><code>Array.&lt;uint&gt;=</code></td>
-      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#City">городов</a></td>
+      <td><code>string=</code></td>
+      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#City">городов</a>, разделенных запятыми</td>
     </tr>
     <tr>
       <td><code>genders</code></td>
-      <td><code>Array.&lt;<a href="<%-this.routePath('datatypes')%>#Gender">Gender</a>&gt;=</code></td>
-      <td>Пол</td>
+      <td><code>string=</code></td>
+      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#Gender">полов</a>, разделенных запятыми</td>
     </tr>
     <tr>
       <td><code>maxAge</code></td>
