@@ -14,11 +14,11 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
   var self = this;
   var d = this.data, vars = this.vars;
   self.writer.write(
-    '<h2 id=\'get\'>Список географических локаций</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/geo</div></div><table class=\'params\'><caption>GET параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>city_ids</code></td><td><code>string=</code></td><td>Идентификаторы <a href="',
+    '<h2 id=\'get\'>Список географических локаций</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/geo</div></div><table class=\'params\'><caption>GET параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>cityIds</code></td><td><code>string=</code></td><td>Идентификаторы <a href="',
     this.routePath('datatypes'), // @26:35
-    '#City">городов</a>, разделенных запятыми</td></tr><tr><td><code>country_ids</code></td><td><code>string=</code></td><td>Идентификаторы <a href="',
+    '#City">городов</a>, разделенных запятыми</td></tr><tr><td><code>countryIds</code></td><td><code>string=</code></td><td>Идентификаторы <a href="',
     this.routePath('datatypes'), // @31:35
-    '#Country">стран</a>, разделенных запятыми</td></tr><tr><td><code>region_ids</code></td><td><code>string=</code></td><td>Идентификаторы <a href="',
+    '#Country">стран</a>, разделенных запятыми</td></tr><tr><td><code>regionIds</code></td><td><code>string=</code></td><td>Идентификаторы <a href="',
     this.routePath('datatypes'), // @36:35
     '#Region">регионов</a>, разделенных запятыми</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  cities: Array.&lt;<a href="',
     this.routePath('datatypes'), // @43:30

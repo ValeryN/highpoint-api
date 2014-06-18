@@ -21,17 +21,17 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>city_ids</code></td>
+      <td><code>cityIds</code></td>
       <td><code>string=</code></td>
       <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#City">городов</a>, разделенных запятыми</td>
     </tr>
     <tr>
-      <td><code>country_ids</code></td>
+      <td><code>countryIds</code></td>
       <td><code>string=</code></td>
       <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#Country">стран</a>, разделенных запятыми</td>
     </tr>
     <tr>
-      <td><code>region_ids</code></td>
+      <td><code>regionIds</code></td>
       <td><code>string=</code></td>
       <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#Region">регионов</a>, разделенных запятыми</td>
     </tr>
