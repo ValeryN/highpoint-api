@@ -65,6 +65,8 @@
 </table>
 <p>Ответ:</p>
 <pre js>
-{}
+{
+  data: true
+}
 </pre>
 <% @block contentInternal } %>

@@ -28,8 +28,8 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @47:35
     '#Gender">полов</a>, разделенных запятыми</td></tr><tr><td><code>maxAge</code></td><td><code>uint=</code></td><td>Максимальный возраст</td></tr><tr><td><code>minAge</code></td><td><code>uint=</code></td><td>Минимальный возраст</td></tr><tr><td><code>viewType</code></td><td><code><a href="',
     this.routePath('datatypes'), // @61:26
-    '#FilterViewType">FilterViewType</a>=</code></td><td>Режим просмотра пользователей</td></tr></tbody></table><p>Ответ:</p><pre js>{}</pre>'
+    '#FilterViewType">FilterViewType</a>=</code></td><td>Режим просмотра пользователей</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: true\n}</pre>'
   );
-}; // @70:1
+}; // @72:1
 
 module.exports = Page;

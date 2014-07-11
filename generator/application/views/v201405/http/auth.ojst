@@ -77,6 +77,8 @@ Authorization: Bearer &lt;token&gt;
 </div>
 <p>Ответ:</p>
 <pre js>
-{}
+{
+  data: true
+}
 </pre>
 <% @block contentInternal } %>

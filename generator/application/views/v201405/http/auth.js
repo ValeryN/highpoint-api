@@ -30,8 +30,8 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @67:18
     '#ErrorCode_WRONG_TOKEN\'>WRONG_TOKEN</a>',
     '\n', // @67:89
-    '}</pre><p>В случае ошибки нужно снова произвести процедуру авторизации.</p><h2>Регистрация</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/signup</div></div><p>Ответ:</p><pre js>{}</pre>'
+    '}</pre><p>В случае ошибки нужно снова произвести процедуру авторизации.</p><h2>Регистрация</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/signup</div></div><p>Ответ:</p><pre js>{\n  data: true\n}</pre>'
   );
-}; // @82:1
+}; // @84:1
 
 module.exports = Page;

@@ -90,7 +90,9 @@
 </table>
 <p>Ответ:</p>
 <pre js>
-{}
+{
+  data: true
+}
 </pre>
 
 <h2>Анлайк поинта</h2>
@@ -117,6 +119,8 @@
 </table>
 <p>Ответ:</p>
 <pre js>
-{}
+{
+  data: true
+}
 </pre>
 <% @block contentInternal } %>
