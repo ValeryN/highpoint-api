@@ -70,12 +70,12 @@
     </tr>
     <tr>
       <td><code>companyId</code></td>
-      <td><code>uint=</code></td>
+      <td><code>uint</code></td>
       <td>Идентификатор <a href="#Company">компании</a></td>
     </tr>
     <tr>
       <td><code>fromYear</code></td>
-      <td><code>uint</code></td>
+      <td><code>uint=</code></td>
       <td>Год начала</td>
     </tr>
     <tr>
@@ -249,12 +249,12 @@
     </tr>
     <tr>
       <td><code>fromYear</code></td>
-      <td><code>uint</code></td>
+      <td><code>uint=</code></td>
       <td>Год начала обучения</td>
     </tr>
     <tr>
       <td><code>schoolId</code></td>
-      <td><code>uint=</code></td>
+      <td><code>uint</code></td>
       <td>Идентификатор <a href="#School">учебного заведения</a></td>
     </tr>
     <tr>

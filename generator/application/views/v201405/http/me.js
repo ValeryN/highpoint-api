@@ -28,82 +28,74 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @47:35
     '#Gender">полов</a>, разделенных запятыми</td></tr><tr><td><code>maxAge</code></td><td><code>uint=</code></td><td>Максимальный возраст</td></tr><tr><td><code>minAge</code></td><td><code>uint=</code></td><td>Минимальный возраст</td></tr><tr><td><code>viewType</code></td><td><code><a href="',
     this.routePath('datatypes'), // @61:26
-    '#FilterViewType">FilterViewType</a>=</code></td><td>Режим просмотра пользователей</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: true\n}</pre><h2>Добавление должности</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/career-posts</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название должности</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: <a href="',
-    this.routePath('datatypes'), // @98:18
-    '#CareerPost">CareerPost</a>',
-    '\n', // @98:77
-    '}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
-    this.routePath('datatypes'), // @105:20
+    '#FilterViewType">FilterViewType</a>=</code></td><td>Режим просмотра пользователей</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: true\n}</pre><h2>Добавление достижения в карьере</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/career</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>companyId</code></td><td><code>uint=</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @91:34
+    '#Company">компании</a></td></tr><tr><td><code>companyName</code></td><td><code>string=</code></td><td>Название <a href="',
+    this.routePath('datatypes'), // @96:29
+    '#Company">компании</a></td></tr><tr><td><code>fromYear</code></td><td><code>uint=</code></td><td>Год начала</td></tr><tr><td><code>postId</code></td><td><code>uint=</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @106:34
+    '#CareerPost">должности</a></td></tr><tr><td><code>postName</code></td><td><code>string=</code></td><td>Название <a href="',
+    this.routePath('datatypes'), // @111:29
+    '#CareerPost">должности</a></td></tr><tr><td><code>toYear</code></td><td><code>uint=</code></td><td>Год окончания</td></tr></tbody></table><p>Одно из двух полей — <code>companyId</code> и <code>companyName</code> — обязательно.</p><p>Ответ:</p><pre js>{\n  data: <a href="',
+    this.routePath('datatypes'), // @124:18
+    '#CareerItem">CareerItem</a>',
+    '\n', // @124:77
+    '}</pre><p>В случае пустого значения параметров <code>companyId</code> и <code>companyName</code> или если компания с данным идентификатором не была найдена в базе, выдается ответ со статусом 403 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
+    this.routePath('datatypes'), // @131:20
     '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
-    this.routePath('datatypes'), // @107:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление должностей</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/career-posts</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
-    this.routePath('datatypes'), // @132:35
-    '#CareerPost">должностей</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
-    this.routePath('datatypes'), // @136:53
-    '#CareerPost">должностей</a>, которые были удалены у пользователя:</p><pre js>{\n  data: Array.&lt;uint&gt;\n}</pre><h2>Добавление компании</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/companies</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название компании</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: <a href="',
-    this.routePath('datatypes'), // @168:18
-    '#Company">Company</a>',
-    '\n', // @168:71
-    '}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
-    this.routePath('datatypes'), // @175:20
-    '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
-    this.routePath('datatypes'), // @177:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление компаний</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/companies</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
-    this.routePath('datatypes'), // @202:35
-    '#Company">компаний</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
-    this.routePath('datatypes'), // @206:53
-    '#Company">компаний</a>, которые были удалены у пользователя:</p><pre js>{\n  data: Array.&lt;uint&gt;\n}</pre><h2>Добавление языка</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/languages</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название языка</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: <a href="',
-    this.routePath('datatypes'), // @238:18
+    this.routePath('datatypes'), // @133:22
+    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'company\'\n    }]\n  }\n}</pre><h2>Удаление достижения в карьере</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/career</div></div><table class=\'params\'><caption>DELETE параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
+    this.routePath('datatypes'), // @158:35
+    '#CareerItem">достижений в карьере</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
+    this.routePath('datatypes'), // @162:53
+    '#CareerItem">достижений в карьере</a>, которые были удалены у пользователя:</p><pre js>{\n  data: Array.&lt;uint&gt;\n}</pre><h2>Добавление языка</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/languages</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название языка</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: <a href="',
+    this.routePath('datatypes'), // @194:18
     '#Language">Language</a>',
-    '\n', // @238:73
+    '\n', // @194:73
     '}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
-    this.routePath('datatypes'), // @245:20
+    this.routePath('datatypes'), // @201:20
     '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
-    this.routePath('datatypes'), // @247:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление языков</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/languages</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
-    this.routePath('datatypes'), // @272:35
+    this.routePath('datatypes'), // @203:22
+    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление языков</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/languages</div></div><table class=\'params\'><caption>DELETE параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
+    this.routePath('datatypes'), // @228:35
     '#Language">языков</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
-    this.routePath('datatypes'), // @276:53
+    this.routePath('datatypes'), // @232:53
     '#Language">языков</a>, которые были удалены у пользователя:</p><pre js>{\n  data: Array.&lt;uint&gt;\n}</pre><h2>Добавление места</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/places</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>cityId</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
-    this.routePath('datatypes'), // @301:34
+    this.routePath('datatypes'), // @257:34
     '#City">города</a></td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Название места</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: <a href="',
-    this.routePath('datatypes'), // @313:18
+    this.routePath('datatypes'), // @269:18
     '#Place">Place</a>',
-    '\n', // @313:67
+    '\n', // @269:67
     '}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
-    this.routePath('datatypes'), // @320:20
+    this.routePath('datatypes'), // @276:20
     '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
-    this.routePath('datatypes'), // @322:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление мест</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/places</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
-    this.routePath('datatypes'), // @347:35
+    this.routePath('datatypes'), // @278:22
+    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление мест</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/places</div></div><table class=\'params\'><caption>DELETE параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
+    this.routePath('datatypes'), // @303:35
     '#Place">мест</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
-    this.routePath('datatypes'), // @351:53
-    '#Place">мест</a>, которые были удалены у пользователя:</p><pre js>{\n  data: Array.&lt;uint&gt;\n}</pre><h2>Добавление учебного заведения</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/schools</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название учебного заведения</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: <a href="',
-    this.routePath('datatypes'), // @383:18
-    '#School">School</a>',
-    '\n', // @383:69
-    '}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
-    this.routePath('datatypes'), // @390:20
+    this.routePath('datatypes'), // @307:53
+    '#Place">мест</a>, которые были удалены у пользователя:</p><pre js>{\n  data: Array.&lt;uint&gt;\n}</pre><h2>Добавление образование</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/education</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>fromYear</code></td><td><code>uint=</code></td><td>Год начала обучения</td></tr><tr><td><code>schoolId</code></td><td><code>uint=</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @337:34
+    '#School">учебного заведения</a></td></tr><tr><td><code>schoolName</code></td><td><code>string=</code></td><td>Название <a href="',
+    this.routePath('datatypes'), // @342:29
+    '#School">учебного заведения</a></td></tr><tr><td><code>specialityId</code></td><td><code>uint=</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @347:34
+    '#Speciality">специальности</a></td></tr><tr><td><code>specialityName</code></td><td><code>string=</code></td><td>Название <a href="',
+    this.routePath('datatypes'), // @352:29
+    '#Speciality">специальности</a></td></tr><tr><td><code>toYear</code></td><td><code>uint=</code></td><td>Год завершения обучения</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: <a href="',
+    this.routePath('datatypes'), // @364:18
+    '#EducationItem">EducationItem</a>',
+    '\n', // @364:83
+    '}</pre><p>В случае пустого значения параметров <code>schoolId</code> и <code>schoolName</code> или если учебное заведение с данным идентификатором не была найдено в базе, выдается ответ со статусом 403 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
+    this.routePath('datatypes'), // @371:20
     '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
-    this.routePath('datatypes'), // @392:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление учебных заведений</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/schools</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
-    this.routePath('datatypes'), // @417:35
-    '#School">учебных заведений</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
-    this.routePath('datatypes'), // @421:53
-    '#School">учебных заведений</a>, которые были удалены у пользователя:</p><pre js>{\n  data: Array.&lt;uint&gt;\n}</pre><h2>Добавление специальности</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/specialities</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название специальности</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: <a href="',
-    this.routePath('datatypes'), // @453:18
-    '#Speciality">Speciality</a>',
-    '\n', // @453:77
-    '}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{\n  error: {\n    code: <a href=\'',
-    this.routePath('datatypes'), // @460:20
-    '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
-    this.routePath('datatypes'), // @462:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление специальностей</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/specialities</div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
-    this.routePath('datatypes'), // @487:35
-    '#Speciality">специальностей</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
-    this.routePath('datatypes'), // @491:53
-    '#Speciality">специальностей</a>, которые были удалены у пользователя:</p><pre js>{\n  data: Array.&lt;uint&gt;\n}</pre>'
+    this.routePath('datatypes'), // @373:22
+    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'school\'\n    }]\n  }\n}</pre><h2>Удаление образования</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/education</div></div><table class=\'params\'><caption>DELETE параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
+    this.routePath('datatypes'), // @398:35
+    '#EducationItem">образования</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
+    this.routePath('datatypes'), // @402:53
+    '#EducationItem">образования</a>, которые были удалены у пользователя:</p><pre js>{\n  data: Array.&lt;uint&gt;\n}</pre>'
   );
-}; // @497:1
+}; // @408:1
 
 module.exports = Page;
