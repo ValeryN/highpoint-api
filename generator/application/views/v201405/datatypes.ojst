@@ -323,6 +323,11 @@
       <td><code>5</code></td>
       <td>Объект не найден</td>
     </tr>
+    <tr id="ErrorCode_REQUIRED">
+      <td><code>REQUIRED</code></td>
+      <td><code>6</code></td>
+      <td>Требуется параметр</td>
+    </tr>
   </tbody>
 </table>
 

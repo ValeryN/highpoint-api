@@ -50,6 +50,12 @@ module.exports = {
               title: 'Географические локации',
               url: '/v201405/http/geo',
             },
+            {
+              name: 'reference',
+              template: 'v201405/http/reference',
+              title: 'Справочник',
+              url: '/v201405/http/reference',
+            },
           ],
         },
         {

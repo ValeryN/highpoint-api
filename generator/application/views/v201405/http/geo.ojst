@@ -40,9 +40,11 @@
 <p>Ответ:</p>
 <pre js>
 {
-  cities: Array.&lt;<a href="<%-this.routePath('datatypes')%>#City">City</a>&gt;,
-  countries: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Country">Country</a>&gt;,
-  regions: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Region">Region</a>&gt;
+  data: {
+    cities: Array.&lt;<a href="<%-this.routePath('datatypes')%>#City">City</a>&gt;,
+    countries: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Country">Country</a>&gt;,
+    regions: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Region">Region</a>&gt;
+  }
 }
 </pre>
 
@@ -69,23 +71,25 @@
     <tr>
       <td><code>limit</code></td>
       <td><code>uint=</code></td>
-      <td>Ограничение в количестве городов. Максимум — 20</td>
+      <td>Ограничение в количестве городов. Максимум — 20</td>
     </tr>
   </tbody>
 </table>
-<p>Осуществляет поиск городов по строке. Поиск осуществляется без учета регистра.</p>
+<p>Осуществляет поиск городов по строке. Поиск осуществляется без учета регистра.</p>
 <p>Ответ:</p>
 <pre js>
 {
-  cities: Array.&lt;<a href="<%-this.routePath('datatypes')%>#City">City</a>&gt;,
-  countries: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Country">Country</a>&gt;,
-  regions: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Region">Region</a>&gt;
+  data: {
+    cities: Array.&lt;<a href="<%-this.routePath('datatypes')%>#City">City</a>&gt;,
+    countries: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Country">Country</a>&gt;,
+    regions: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Region">Region</a>&gt;
+  }
 }
 </pre>
 <p>Порядок, в котором отдаются города:</p>
 <ol>
   <li>Строка запроса и название города совпадают.</li>
   <li>Полное название города начинается со строки запроса.</li>
-  <li>Строка запроса присутствует в полном названиии города.</li>
+  <li>Строка запроса присутствует в полном названиии города.</li>
 </ol>
 <% @block contentInternal } %>

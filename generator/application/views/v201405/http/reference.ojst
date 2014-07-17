@@ -1,0 +1,314 @@
+<% @require LayoutTemplate = '../../layout' %>
+
+<% @template Page %>
+<% @inherits LayoutTemplate %>
+
+
+<% @block contentInternal { %>
+<h2 id='get'>Список элементов справочника</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/reference</div>
+</div>
+<table class='params'>
+  <caption>GET параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>careerPostIds</code></td>
+      <td><code>string=</code></td>
+      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#CareerPost">должностей</a>, разделенных запятыми</td>
+    </tr>
+    <tr>
+      <td><code>companyIds</code></td>
+      <td><code>string=</code></td>
+      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#Company">компаний</a>, разделенных запятыми</td>
+    </tr>
+    <tr>
+      <td><code>languageIds</code></td>
+      <td><code>string=</code></td>
+      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#Language">языков</a>, разделенных запятыми</td>
+    </tr>
+    <tr>
+      <td><code>placeIds</code></td>
+      <td><code>string=</code></td>
+      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#Place">мест</a>, разделенных запятыми</td>
+    </tr>
+    <tr>
+      <td><code>schoolIds</code></td>
+      <td><code>string=</code></td>
+      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#School">учебных заведений</a>, разделенных запятыми</td>
+    </tr>
+    <tr>
+      <td><code>specialityIds</code></td>
+      <td><code>string=</code></td>
+      <td>Идентификаторы <a href="<%-this.routePath('datatypes')%>#Speciality">специальностей</a>, разделенных запятыми</td>
+    </tr>
+  </tbody>
+</table>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    careerPosts: Array.&lt;<a href="<%-this.routePath('datatypes')%>#CareerPost">CareerPost</a>&gt;=,
+    companies: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Company">Company</a>&gt;=,
+    languages: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Language">Language</a>&gt;=,
+    places: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Place">Place</a>&gt;=,
+    schools: Array.&lt;<a href="<%-this.routePath('datatypes')%>#School">School</a>&gt;=,
+    specialities: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Speciality">Speciality</a>&gt;=
+  }
+}
+</pre>
+
+<h2>Поиск должностей</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/reference/career-posts/find</div>
+</div>
+<table class='params'>
+  <caption>GET параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>query</code></td>
+      <td><code>string</code></td>
+      <td>Строка запроса</td>
+    </tr>
+    <tr>
+      <td><code>limit</code></td>
+      <td><code>uint=</code></td>
+      <td>Ограничение в количестве должностей. Максимум — 20</td>
+    </tr>
+  </tbody>
+</table>
+<p>Осуществляет поиск должностей по строке. Поиск осуществляется без учета регистра.</p>
+<p>Ответ:</p>
+<pre js>
+{
+  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#CareerPost">CareerPost</a>&gt;
+}
+</pre>
+<p>Порядок, в котором отдаются должности:</p>
+<ol>
+  <li>Строка запроса и название должности совпадают.</li>
+  <li>Название должности начинается со строки запроса.</li>
+  <li>Строка запроса присутствует в названиии должности.</li>
+</ol>
+
+<h2>Поиск компаний</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/reference/companies/find</div>
+</div>
+<table class='params'>
+  <caption>GET параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>query</code></td>
+      <td><code>string</code></td>
+      <td>Строка запроса</td>
+    </tr>
+    <tr>
+      <td><code>limit</code></td>
+      <td><code>uint=</code></td>
+      <td>Ограничение в количестве компаний. Максимум — 20</td>
+    </tr>
+  </tbody>
+</table>
+<p>Осуществляет поиск компаний по строке. Поиск осуществляется без учета регистра.</p>
+<p>Ответ:</p>
+<pre js>
+{
+  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Company">Company</a>&gt;
+}
+</pre>
+<p>Порядок, в котором отдаются компании:</p>
+<ol>
+  <li>Строка запроса и название компании совпадают.</li>
+  <li>Название компании начинается со строки запроса.</li>
+  <li>Строка запроса присутствует в названиии компании.</li>
+</ol>
+
+<h2>Поиск языков</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/reference/languages/find</div>
+</div>
+<table class='params'>
+  <caption>GET параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>query</code></td>
+      <td><code>string</code></td>
+      <td>Строка запроса</td>
+    </tr>
+    <tr>
+      <td><code>limit</code></td>
+      <td><code>uint=</code></td>
+      <td>Ограничение в количестве языков. Максимум — 20</td>
+    </tr>
+  </tbody>
+</table>
+<p>Осуществляет поиск языков по строке. Поиск осуществляется без учета регистра.</p>
+<p>Ответ:</p>
+<pre js>
+{
+  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Language">Language</a>&gt;
+}
+</pre>
+<p>Порядок, в котором отдаются языки:</p>
+<ol>
+  <li>Строка запроса и название языка совпадают.</li>
+  <li>Название языка начинается со строки запроса.</li>
+  <li>Строка запроса присутствует в названиии языка.</li>
+</ol>
+
+<h2>Поиск мест</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/reference/places/find</div>
+</div>
+<table class='params'>
+  <caption>GET параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>query</code></td>
+      <td><code>string</code></td>
+      <td>Строка запроса</td>
+    </tr>
+    <tr>
+      <td><code>limit</code></td>
+      <td><code>uint=</code></td>
+      <td>Ограничение в количестве мест. Максимум — 20</td>
+    </tr>
+  </tbody>
+</table>
+<p>Осуществляет поиск мест по строке. Поиск осуществляется без учета регистра.</p>
+<p>Ответ:</p>
+<pre js>
+{
+  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Place">Place</a>&gt;
+}
+</pre>
+<p>Порядок, в котором отдаются места:</p>
+<ol>
+  <li>Строка запроса и название места совпадают.</li>
+  <li>Название места начинается со строки запроса.</li>
+  <li>Строка запроса присутствует в названиии места.</li>
+</ol>
+
+<h2>Поиск учебных заведений</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/reference/schools/find</div>
+</div>
+<table class='params'>
+  <caption>GET параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>query</code></td>
+      <td><code>string</code></td>
+      <td>Строка запроса</td>
+    </tr>
+    <tr>
+      <td><code>limit</code></td>
+      <td><code>uint=</code></td>
+      <td>Ограничение в количестве учебных заведений. Максимум — 20</td>
+    </tr>
+  </tbody>
+</table>
+<p>Осуществляет поиск учебных заведений по строке. Поиск осуществляется без учета регистра.</p>
+<p>Ответ:</p>
+<pre js>
+{
+  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#School">School</a>&gt;
+}
+</pre>
+<p>Порядок, в котором отдаются учебные заведения:</p>
+<ol>
+  <li>Строка запроса и название учебного заведения совпадают.</li>
+  <li>Название учебного заведения начинается со строки запроса.</li>
+  <li>Строка запроса присутствует в названиии учебного заведения.</li>
+</ol>
+
+<h2>Поиск специальностей</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/reference/specialities/find</div>
+</div>
+<table class='params'>
+  <caption>GET параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>query</code></td>
+      <td><code>string</code></td>
+      <td>Строка запроса</td>
+    </tr>
+    <tr>
+      <td><code>limit</code></td>
+      <td><code>uint=</code></td>
+      <td>Ограничение в количестве специальностей. Максимум — 20</td>
+    </tr>
+  </tbody>
+</table>
+<p>Осуществляет поиск специальностей по строке. Поиск осуществляется без учета регистра.</p>
+<p>Ответ:</p>
+<pre js>
+{
+  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Speciality">Speciality</a>&gt;
+}
+</pre>
+<p>Порядок, в котором отдаются специальности:</p>
+<ol>
+  <li>Строка запроса и название специальности совпадают.</li>
+  <li>Название специальности начинается со строки запроса.</li>
+  <li>Строка запроса присутствует в названиии специальности.</li>
+</ol>
+<% @block contentInternal } %>

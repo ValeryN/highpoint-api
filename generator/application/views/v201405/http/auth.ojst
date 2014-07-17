@@ -44,7 +44,7 @@
 <pre js>
 {
   error: {
-    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_WRONG_USER_OR_PASSWORD'>WRONG_USER_OR_PASSWORD</a><%-'\n  '%>
+    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_WRONG_USER_OR_PASSWORD'>ErrorCode.WRONG_USER_OR_PASSWORD</a><%-'\n  '%>
   }
 }
 </pre>
@@ -57,14 +57,14 @@ Authorization: Bearer &lt;token&gt;
 <pre js>
 {
   error: {
-    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_WRONG_TOKEN'>WRONG_TOKEN</a><%-'\n  '%>
+    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_WRONG_TOKEN'>ErrorCode.WRONG_TOKEN</a><%-'\n  '%>
   }
 }
 </pre>
 <p>В соединении с помощью веб-сокетов приходит событие <code><a href="<%-this.routePath('server2client')%>#error">error</a></code> со следующим содержимым поля <code>error</code>:</p>
 <pre js>
 {
-  code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_WRONG_TOKEN'>WRONG_TOKEN</a><%-'\n'%>
+  code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_WRONG_TOKEN'>ErrorCode.WRONG_TOKEN</a><%-'\n'%>
 }
 </pre>
 <p>В случае ошибки нужно снова произвести процедуру авторизации.</p>

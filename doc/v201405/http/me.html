@@ -4,4 +4,76 @@
   }
 }</pre><h2>Обновление настроек фильтра текущего пользователя</h2><div class='request'><div class='method'>PUT</div><div class='path'>/v201405/me/filter</div><div class='auth'>Требуется <a href="./auth.html#signin">авторизация</a></div></div><table class='params'><caption>PUT параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>cityIds</code></td><td><code>string=</code></td><td>Идентификаторы <a href="../data-types.html#City">городов</a>, разделенных запятыми</td></tr><tr><td><code>genders</code></td><td><code>string=</code></td><td>Идентификаторы <a href="../data-types.html#Gender">полов</a>, разделенных запятыми</td></tr><tr><td><code>maxAge</code></td><td><code>uint=</code></td><td>Максимальный возраст</td></tr><tr><td><code>minAge</code></td><td><code>uint=</code></td><td>Минимальный возраст</td></tr><tr><td><code>viewType</code></td><td><code><a href="../data-types.html#FilterViewType">FilterViewType</a>=</code></td><td>Режим просмотра пользователей</td></tr></tbody></table><p>Ответ:</p><pre js>{
   data: true
-}</pre></div><div class='sidebar'><div class='navigation'><div class='item'><a href="../../index.html">High Point API</a><div class='navigation'><div class='item'>Версия от 2014-05<div class='navigation'><div class='item'>HTTP запросы<div class='navigation'><div class='item'><a href="./settings.html">Настройки приложения</a></div><div class='item'><a href="./auth.html">Авторизация и регистрация</a></div><div class='item item-selected'>Текущий пользователь</div><div class='item'><a href="./users.html">Пользователи</a></div><div class='item'><a href="./points.html">Поинты</a></div><div class='item'><a href="./geo.html">Географические локации</a></div></div></div><div class='item'><a href="../web-sockets.html">Web-сокеты</a><div class='navigation'><div class='item'><a href="../web-sockets/client2server.html">Команды клиента серверу</a></div><div class='item'><a href="../web-sockets/server2client.html">События сервера клиенту</a></div></div></div><div class='item'><a href="../data-types.html">Типы данных</a></div></div></div></div></div></div><div class='toggle'></div></div><script src='../../s/js/main.js'></script></body></html>
+}</pre><h2>Добавление должности</h2><div class='request'><div class='method'>POST</div><div class='path'>/v201405/me/career-posts</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название должности</td></tr></tbody></table><p>Ответ:</p><pre js>{
+  data: <a href="../data-types.html#CareerPost">CareerPost</a>
+}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{
+  error: {
+    code: <a href='../data-types.html#ErrorCode_WRONG_PARAMS'>ErrorCode.WRONG_PARAMS</a>,
+    params: [{
+      code: <a href='../data-types.html#ErrorCode_REQUIRED'>ErrorCode.REQUIRED</a>,
+      name: 'name'
+    }]
+  }
+}</pre><h2>Удаление должностей</h2><div class='request'><div class='method'>DELETE</div><div class='path'>/v201405/me/career-posts</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="../data-types.html#CareerPost">должностей</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="../data-types.html#CareerPost">должностей</a>, которые были удалены у пользователя:</p><pre js>{
+  data: Array.&lt;uint&gt;
+}</pre><h2>Добавление компании</h2><div class='request'><div class='method'>POST</div><div class='path'>/v201405/me/companies</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название компании</td></tr></tbody></table><p>Ответ:</p><pre js>{
+  data: <a href="../data-types.html#Company">Company</a>
+}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{
+  error: {
+    code: <a href='../data-types.html#ErrorCode_WRONG_PARAMS'>ErrorCode.WRONG_PARAMS</a>,
+    params: [{
+      code: <a href='../data-types.html#ErrorCode_REQUIRED'>ErrorCode.REQUIRED</a>,
+      name: 'name'
+    }]
+  }
+}</pre><h2>Удаление компаний</h2><div class='request'><div class='method'>DELETE</div><div class='path'>/v201405/me/companies</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="../data-types.html#Company">компаний</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="../data-types.html#Company">компаний</a>, которые были удалены у пользователя:</p><pre js>{
+  data: Array.&lt;uint&gt;
+}</pre><h2>Добавление языка</h2><div class='request'><div class='method'>POST</div><div class='path'>/v201405/me/languages</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название языка</td></tr></tbody></table><p>Ответ:</p><pre js>{
+  data: <a href="../data-types.html#Language">Language</a>
+}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{
+  error: {
+    code: <a href='../data-types.html#ErrorCode_WRONG_PARAMS'>ErrorCode.WRONG_PARAMS</a>,
+    params: [{
+      code: <a href='../data-types.html#ErrorCode_REQUIRED'>ErrorCode.REQUIRED</a>,
+      name: 'name'
+    }]
+  }
+}</pre><h2>Удаление языков</h2><div class='request'><div class='method'>DELETE</div><div class='path'>/v201405/me/languages</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="../data-types.html#Language">языков</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="../data-types.html#Language">языков</a>, которые были удалены у пользователя:</p><pre js>{
+  data: Array.&lt;uint&gt;
+}</pre><h2>Добавление места</h2><div class='request'><div class='method'>POST</div><div class='path'>/v201405/me/places</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>cityId</code></td><td><code>uint</code></td><td>Идентификатор <a href="../data-types.html#City">города</a></td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Название места</td></tr></tbody></table><p>Ответ:</p><pre js>{
+  data: <a href="../data-types.html#Place">Place</a>
+}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{
+  error: {
+    code: <a href='../data-types.html#ErrorCode_WRONG_PARAMS'>ErrorCode.WRONG_PARAMS</a>,
+    params: [{
+      code: <a href='../data-types.html#ErrorCode_REQUIRED'>ErrorCode.REQUIRED</a>,
+      name: 'name'
+    }]
+  }
+}</pre><h2>Удаление мест</h2><div class='request'><div class='method'>DELETE</div><div class='path'>/v201405/me/places</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="../data-types.html#Place">мест</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="../data-types.html#Place">мест</a>, которые были удалены у пользователя:</p><pre js>{
+  data: Array.&lt;uint&gt;
+}</pre><h2>Добавление учебного заведения</h2><div class='request'><div class='method'>POST</div><div class='path'>/v201405/me/schools</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название учебного заведения</td></tr></tbody></table><p>Ответ:</p><pre js>{
+  data: <a href="../data-types.html#School">School</a>
+}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{
+  error: {
+    code: <a href='../data-types.html#ErrorCode_WRONG_PARAMS'>ErrorCode.WRONG_PARAMS</a>,
+    params: [{
+      code: <a href='../data-types.html#ErrorCode_REQUIRED'>ErrorCode.REQUIRED</a>,
+      name: 'name'
+    }]
+  }
+}</pre><h2>Удаление учебных заведений</h2><div class='request'><div class='method'>DELETE</div><div class='path'>/v201405/me/schools</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="../data-types.html#School">учебных заведений</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="../data-types.html#School">учебных заведений</a>, которые были удалены у пользователя:</p><pre js>{
+  data: Array.&lt;uint&gt;
+}</pre><h2>Добавление специальности</h2><div class='request'><div class='method'>POST</div><div class='path'>/v201405/me/specialities</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>Название специальности</td></tr></tbody></table><p>Ответ:</p><pre js>{
+  data: <a href="../data-types.html#Speciality">Speciality</a>
+}</pre><p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p><pre js>{
+  error: {
+    code: <a href='../data-types.html#ErrorCode_WRONG_PARAMS'>ErrorCode.WRONG_PARAMS</a>,
+    params: [{
+      code: <a href='../data-types.html#ErrorCode_REQUIRED'>ErrorCode.REQUIRED</a>,
+      name: 'name'
+    }]
+  }
+}</pre><h2>Удаление специальностей</h2><div class='request'><div class='method'>DELETE</div><div class='path'>/v201405/me/specialities</div></div><table class='params'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="../data-types.html#Speciality">специальностей</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="../data-types.html#Speciality">специальностей</a>, которые были удалены у пользователя:</p><pre js>{
+  data: Array.&lt;uint&gt;
+}</pre></div><div class='sidebar'><div class='navigation'><div class='item'><a href="../../index.html">High Point API</a><div class='navigation'><div class='item'>Версия от 2014-05<div class='navigation'><div class='item'>HTTP запросы<div class='navigation'><div class='item'><a href="./settings.html">Настройки приложения</a></div><div class='item'><a href="./auth.html">Авторизация и регистрация</a></div><div class='item item-selected'>Текущий пользователь</div><div class='item'><a href="./users.html">Пользователи</a></div><div class='item'><a href="./points.html">Поинты</a></div><div class='item'><a href="./geo.html">Географические локации</a></div><div class='item'><a href="./reference.html">Справочник</a></div></div></div><div class='item'><a href="../web-sockets.html">Web-сокеты</a><div class='navigation'><div class='item'><a href="../web-sockets/client2server.html">Команды клиента серверу</a></div><div class='item'><a href="../web-sockets/server2client.html">События сервера клиенту</a></div></div></div><div class='item'><a href="../data-types.html">Типы данных</a></div></div></div></div></div></div><div class='toggle'></div></div><script src='../../s/js/main.js'></script></body></html>
