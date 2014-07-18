@@ -44,7 +44,7 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @131:20
     '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
     this.routePath('datatypes'), // @133:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'company\'\n    }]\n  }\n}</pre><h2>Удаление достижения в карьере</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/career</div></div><table class=\'params\'><caption>DELETE параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
+    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'company\'\n    }]\n  }\n}</pre><h2>Удаление достижения в карьере</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/career</div></div><table class=\'params\'><caption>GET параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
     this.routePath('datatypes'), // @158:35
     '#CareerItem">достижений в карьере</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
     this.routePath('datatypes'), // @162:53
@@ -56,7 +56,7 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @201:20
     '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
     this.routePath('datatypes'), // @203:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление языков</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/languages</div></div><table class=\'params\'><caption>DELETE параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
+    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление языков</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/languages</div></div><table class=\'params\'><caption>GET параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
     this.routePath('datatypes'), // @228:35
     '#Language">языков</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
     this.routePath('datatypes'), // @232:53
@@ -70,7 +70,7 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @276:20
     '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
     this.routePath('datatypes'), // @278:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление мест</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/places</div></div><table class=\'params\'><caption>DELETE параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
+    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'name\'\n    }]\n  }\n}</pre><h2>Удаление мест</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/places</div></div><table class=\'params\'><caption>GET параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
     this.routePath('datatypes'), // @303:35
     '#Place">мест</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
     this.routePath('datatypes'), // @307:53
@@ -90,7 +90,7 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @371:20
     '#ErrorCode_WRONG_PARAMS\'>ErrorCode.WRONG_PARAMS</a>,\n    params: [{\n      code: <a href=\'',
     this.routePath('datatypes'), // @373:22
-    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'school\'\n    }]\n  }\n}</pre><h2>Удаление образования</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/education</div></div><table class=\'params\'><caption>DELETE параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
+    '#ErrorCode_REQUIRED\'>ErrorCode.REQUIRED</a>,\n      name: \'school\'\n    }]\n  }\n}</pre><h2>Удаление образования</h2><div class=\'request\'><div class=\'method\'>DELETE</div><div class=\'path\'>/v201405/me/education</div></div><table class=\'params\'><caption>GET параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>string</code></td><td>Идентификаторы <a href="',
     this.routePath('datatypes'), // @398:35
     '#EducationItem">образования</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
     this.routePath('datatypes'), // @402:53

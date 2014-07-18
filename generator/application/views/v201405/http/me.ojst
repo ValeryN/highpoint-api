@@ -143,7 +143,7 @@
   <div class='path'>/v201405/me/career</div>
 </div>
 <table class='params'>
-  <caption>DELETE параметры</caption>
+  <caption>GET параметры</caption>
   <thead>
     <tr>
       <th>Название</th>
@@ -213,7 +213,7 @@
   <div class='path'>/v201405/me/languages</div>
 </div>
 <table class='params'>
-  <caption>DELETE параметры</caption>
+  <caption>GET параметры</caption>
   <thead>
     <tr>
       <th>Название</th>
@@ -288,7 +288,7 @@
   <div class='path'>/v201405/me/places</div>
 </div>
 <table class='params'>
-  <caption>DELETE параметры</caption>
+  <caption>GET параметры</caption>
   <thead>
     <tr>
       <th>Название</th>
@@ -383,7 +383,7 @@
   <div class='path'>/v201405/me/education</div>
 </div>
 <table class='params'>
-  <caption>DELETE параметры</caption>
+  <caption>GET параметры</caption>
   <thead>
     <tr>
       <th>Название</th>
