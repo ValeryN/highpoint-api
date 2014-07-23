@@ -22,12 +22,12 @@
 
 <h2>Обновление настроек фильтра текущего пользователя</h2>
 <div class='request'>
-  <div class='method'>PUT</div>
-  <div class='path'>/v201405/me/filter</div>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/me/filter/update</div>
   <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
-  <caption>PUT параметры</caption>
+  <caption>POST параметры</caption>
   <thead>
     <tr>
       <th>Название</th>
@@ -66,14 +66,17 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: true
+  data: {
+    filter: <a href="<%-this.routePath('datatypes')%>#Filter">Filter</a><%-'\n  '%>
+  }
 }
 </pre>
 
 <h2>Добавление достижения в карьере</h2>
 <div class='request'>
   <div class='method'>POST</div>
-  <div class='path'>/v201405/me/career</div>
+  <div class='path'>/v201405/me/career/add</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
   <caption>POST параметры</caption>
@@ -121,7 +124,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: <a href="<%-this.routePath('datatypes')%>#CareerItem">CareerItem</a><%-'\n'%>
+  data: {
+    careerItem: <a href="<%-this.routePath('datatypes')%>#CareerItem">CareerItem</a><%-'\n  '%>
+  }
 }
 </pre>
 <p>В случае пустого значения параметров <code>companyId</code> и <code>companyName</code> или если компания с данным идентификатором не была найдена в базе, выдается ответ со статусом 403 и данными:</p>
@@ -139,11 +144,12 @@
 
 <h2>Удаление достижения в карьере</h2>
 <div class='request'>
-  <div class='method'>DELETE</div>
-  <div class='path'>/v201405/me/career</div>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/me/career/remove</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
-  <caption>GET параметры</caption>
+  <caption>POST параметры</caption>
   <thead>
     <tr>
       <th>Название</th>
@@ -162,14 +168,17 @@
 <p>В ответ выдается список идентификаторов <a href="<%-this.routePath('datatypes')%>#CareerItem">достижений в карьере</a>, которые были удалены у пользователя:</p>
 <pre js>
 {
-  data: Array.&lt;uint&gt;
+  data: {
+    ids: Array.&lt;uint&gt;
+  }
 }
 </pre>
 
 <h2>Добавление языка</h2>
 <div class='request'>
   <div class='method'>POST</div>
-  <div class='path'>/v201405/me/languages</div>
+  <div class='path'>/v201405/me/languages/add</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
   <caption>POST параметры</caption>
@@ -191,7 +200,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: <a href="<%-this.routePath('datatypes')%>#Language">Language</a><%-'\n'%>
+  data: {
+    language: <a href="<%-this.routePath('datatypes')%>#Language">Language</a><%-'\n  '%>
+  }
 }
 </pre>
 <p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p>
@@ -209,11 +220,12 @@
 
 <h2>Удаление языков</h2>
 <div class='request'>
-  <div class='method'>DELETE</div>
-  <div class='path'>/v201405/me/languages</div>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/me/languages/remove</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
-  <caption>GET параметры</caption>
+  <caption>POST параметры</caption>
   <thead>
     <tr>
       <th>Название</th>
@@ -232,14 +244,17 @@
 <p>В ответ выдается список идентификаторов <a href="<%-this.routePath('datatypes')%>#Language">языков</a>, которые были удалены у пользователя:</p>
 <pre js>
 {
-  data: Array.&lt;uint&gt;
+  data: {
+    ids: Array.&lt;uint&gt;
+  }
 }
 </pre>
 
 <h2>Добавление места</h2>
 <div class='request'>
   <div class='method'>POST</div>
-  <div class='path'>/v201405/me/places</div>
+  <div class='path'>/v201405/me/places/add</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
   <caption>POST параметры</caption>
@@ -266,7 +281,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: <a href="<%-this.routePath('datatypes')%>#Place">Place</a><%-'\n'%>
+  data: {
+    place: <a href="<%-this.routePath('datatypes')%>#Place">Place</a><%-'\n  '%>
+  }
 }
 </pre>
 <p>В случае пустого значения параметра <code>name</code> выдается ответ со статусом 403 и данными:</p>
@@ -284,11 +301,12 @@
 
 <h2>Удаление мест</h2>
 <div class='request'>
-  <div class='method'>DELETE</div>
-  <div class='path'>/v201405/me/places</div>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/me/places/remove</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
-  <caption>GET параметры</caption>
+  <caption>POST параметры</caption>
   <thead>
     <tr>
       <th>Название</th>
@@ -307,14 +325,17 @@
 <p>В ответ выдается список идентификаторов <a href="<%-this.routePath('datatypes')%>#Place">мест</a>, которые были удалены у пользователя:</p>
 <pre js>
 {
-  data: Array.&lt;uint&gt;
+  data: {
+    ids: Array.&lt;uint&gt;
+  }
 }
 </pre>
 
-<h2>Добавление образование</h2>
+<h2>Добавление образования</h2>
 <div class='request'>
   <div class='method'>POST</div>
-  <div class='path'>/v201405/me/education</div>
+  <div class='path'>/v201405/me/education/add</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
   <caption>POST параметры</caption>
@@ -361,7 +382,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: <a href="<%-this.routePath('datatypes')%>#EducationItem">EducationItem</a><%-'\n'%>
+  data: {
+    educationItem: <a href="<%-this.routePath('datatypes')%>#EducationItem">EducationItem</a><%-'\n  '%>
+  }
 }
 </pre>
 <p>В случае пустого значения параметров <code>schoolId</code> и <code>schoolName</code> или если учебное заведение с данным идентификатором не была найдено в базе, выдается ответ со статусом 403 и данными:</p>
@@ -379,11 +402,12 @@
 
 <h2>Удаление образования</h2>
 <div class='request'>
-  <div class='method'>DELETE</div>
-  <div class='path'>/v201405/me/education</div>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/me/education/remove</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
-  <caption>GET параметры</caption>
+  <caption>POST параметры</caption>
   <thead>
     <tr>
       <th>Название</th>
@@ -402,7 +426,9 @@
 <p>В ответ выдается список идентификаторов <a href="<%-this.routePath('datatypes')%>#EducationItem">образования</a>, которые были удалены у пользователя:</p>
 <pre js>
 {
-  data: Array.&lt;uint&gt;
+  data: {
+    ids: Array.&lt;uint&gt;
+  }
 }
 </pre>
 <% @block contentInternal } %>

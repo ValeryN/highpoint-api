@@ -24,8 +24,30 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @62:31
     '#User">User</a>&gt;,\n    points: Object.&lt;<a href="',
     this.routePath('datatypes'), // @63:33
-    '#Point">Point</a>&gt;=\n  }\n}</pre><p>Если задан GET параметр <code>includePoints=1</code>, в ответе возвращаются поинты, созданные пользователями. Ключом является идентификатор пользователям, значением — объект поинта.</p>'
+    '#Point">Point</a>&gt;=\n  }\n}</pre><p>Если задан GET параметр <code>includePoints=1</code>, в ответе возвращаются поинты, созданные пользователями. Ключом является идентификатор пользователям, значением — объект поинта.</p><h2>Список сообщений текущего пользователя с другим пользователем</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/users/&lt;id&gt;/messages</div><div class=\'auth\'>Требуется <a href="',
+    this.routePath('auth'), // @73:40
+    '#signin">авторизация</a></div></div><table class=\'params\'><caption>Параметры адресной строки</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @88:34
+    '#User">пользователя</a></td></tr></tbody></table><table class=\'params\'><caption>GET параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>afterMessageId</code></td><td><code>uint=</code></td><td><p>Идентификатор <a href="',
+    this.routePath('datatypes'), // @106:35
+    '#Message">сообщения</a>, после которого произвести выборку.</p>Допустим, в БД содержится список: <code>1,2,3,4,5,6</code>. При запросе возвращается: <code>1,2,3</code>. Чтобы получить следующие сообщения (<code>4,5,6</code>), необходимо задать параметр <code>afterMessageId=3</code>.</td></tr></tbody></table><p>Запрос возвращает список сообщений текущего пользователя с пользователем с идентификатором <code>id</code>, сортированных от новых к старым.</p><p>Ответ:</p><pre js>{\n  data: {\n    messages: Array.&lt;<a href="',
+    this.routePath('datatypes'), // @117:34
+    '#Message">Message</a>&gt;\n  }\n}</pre><h2>Создание сообщения другому пользователю</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/users/&lt;id&gt;/messages/add</div><div class=\'auth\'>Требуется <a href="',
+    this.routePath('auth'), // @126:40
+    '#signin">авторизация</a></div></div><table class=\'params\'><caption>Параметры адресной строки</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @141:34
+    '#User">пользователя</a></td></tr></tbody></table><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>delay</code></td><td><code>uint=</code></td><td>Задержка отправки сообщения в мс</td></tr><tr><td><code>text</code></td><td><code>string</code></td><td>Текст сообщения</td></tr></tbody></table><p>В ответе возвращается созданное сообщение:</p><pre js>{\n  data: {\n    message: <a href="',
+    this.routePath('datatypes'), // @171:23
+    '#Message">Message</a>',
+    '\n  ', // @171:76
+    '}\n}</pre><p>Если пользователь, которому отправлено сообщение, и текущий пользователь не являются контактами, они добавляются друг к другу как контакты.</p><h2>Создание нескольких сообщений другому пользователю</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/users/&lt;id&gt;/messages/add</div><div class=\'auth\'>Требуется <a href="',
+    this.routePath('auth'), // @181:40
+    '#signin">авторизация</a></div></div><table class=\'params\'><caption>Параметры адресной строки</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>uint</code></td><td>Идентификатор <a href="',
+    this.routePath('datatypes'), // @196:34
+    '#User">пользователя</a></td></tr></tbody></table><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>data</code></td><td><pre class="inline">JSON(Array.&lt;{\n  delay: uint,\n  text: string\n}&gt;)</pre></td><td>Список объектов с задержкой отправки сообщения в мс и текстом</td></tr></tbody></table><p>В ответе возвращается список созданных сообщений, отсортированных от новых к старым:</p><pre js>{\n  data: {\n    messages: Array.&lt;<a href="',
+    this.routePath('datatypes'), // @224:34
+    '#Message">Message</a>&gt;\n  }\n}</pre><p>Если пользователь, которому отправлено сообщение, и текущий пользователь не являются контактами, они добавляются друг к другу как контакты.</p>'
   );
-}; // @68:1
+}; // @229:1
 
 module.exports = Page;

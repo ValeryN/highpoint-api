@@ -91,7 +91,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: true
+  data: {
+    success: true
+  }
 }
 </pre>
 
@@ -120,7 +122,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: true
+  data: {
+    success: true
+  }
 }
 </pre>
 <% @block contentInternal } %>

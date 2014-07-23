@@ -33,6 +33,12 @@ module.exports = {
               url: '/v201405/http/me'
             },
             {
+              name: 'contacts',
+              template: 'v201405/http/contacts',
+              title: 'Контакты',
+              url: '/v201405/http/contacts'
+            },
+            {
               name: 'users',
               template: 'v201405/http/users',
               title: 'Пользователи',

@@ -602,11 +602,6 @@
       <td>Идентификатор сообщения</td>
     </tr>
     <tr>
-      <td><code>body</code></td>
-      <td><code><a href="#MessageBody">MessageBody</a></code></td>
-      <td>Тело сообщения</td>
-    </tr>
-    <tr>
       <td><code>createdAt</code></td>
       <td><code><a href="#DateTime">DateTime</a></code></td>
       <td>Дата и время создания сообщения</td>
@@ -618,7 +613,7 @@
     </tr>
     <tr>
       <td><code>readAt</code></td>
-      <td><code><a href="#DateTime">DateTime</a></code></td>
+      <td><code><a href="#DateTime">DateTime</a>?</code></td>
       <td>Дата и время прочтения сообщения получателем</td>
     </tr>
     <tr>
@@ -626,19 +621,6 @@
       <td><code>uint</code></td>
       <td>Идентификатор <a href="#User">отправителя</a></td>
     </tr>
-  </tbody>
-</table>
-
-<h2 id="MessageBody">MessageBody — тело сообщения в чате</h2>
-<table class='params'>
-  <thead>
-    <tr>
-      <th>Название</th>
-      <th>Тип</th>
-      <th>Описание</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><code>text</code></td>
       <td><code>string</code></td>

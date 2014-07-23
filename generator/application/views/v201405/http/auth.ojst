@@ -78,7 +78,9 @@ Authorization: Bearer &lt;token&gt;
 <p>Ответ:</p>
 <pre js>
 {
-  data: true
+  data: {
+    user: <a href='<%-this.routePath('datatypes')%>#User'>User</a><%-'\n  '%>
+  }
 }
 </pre>
 <% @block contentInternal } %>

@@ -97,7 +97,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#CareerPost">CareerPost</a>&gt;
+  data: {
+    careerPosts: Array.&lt;<a href="<%-this.routePath('datatypes')%>#CareerPost">CareerPost</a>&gt;
+  }
 }
 </pre>
 <p>Порядок, в котором отдаются должности:</p>
@@ -138,7 +140,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Company">Company</a>&gt;
+  data: {
+    companies: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Company">Company</a>&gt;
+  }
 }
 </pre>
 <p>Порядок, в котором отдаются компании:</p>
@@ -179,7 +183,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Language">Language</a>&gt;
+  data: {
+    languages: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Language">Language</a>&gt;
+  }
 }
 </pre>
 <p>Порядок, в котором отдаются языки:</p>
@@ -220,7 +226,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Place">Place</a>&gt;
+  data: {
+    places: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Place">Place</a>&gt;
+  }
 }
 </pre>
 <p>Порядок, в котором отдаются места:</p>
@@ -261,7 +269,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#School">School</a>&gt;
+  data: {
+    schools: Array.&lt;<a href="<%-this.routePath('datatypes')%>#School">School</a>&gt;
+  }
 }
 </pre>
 <p>Порядок, в котором отдаются учебные заведения:</p>
@@ -302,7 +312,9 @@
 <p>Ответ:</p>
 <pre js>
 {
-  data: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Speciality">Speciality</a>&gt;
+  data: {
+    specialities: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Speciality">Speciality</a>&gt;
+  }
 }
 </pre>
 <p>Порядок, в котором отдаются специальности:</p>

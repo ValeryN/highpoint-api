@@ -38,14 +38,14 @@
       <td>Идентификатор, который отправится обратно клиенту с подтверждением отправки сообщения</td>
     </tr>
     <tr>
-      <td><code>body</code></td>
-      <td><code><a href="<%-this.routePath('datatypes')%>#MessageBody">MessageBody</a></code></td>
-      <td>Тело сообщения</td>
-    </tr>
-    <tr>
       <td><code>destinationId</code></td>
       <td><code>uint</code></td>
       <td>Идентификатор <a href="<%-this.routePath('datatypes')%>#User">получателя</a></td>
+    </tr>
+    <tr>
+      <td><code>text</code></td>
+      <td><code>string</code></td>
+      <td>Текст сообщения</td>
     </tr>
   </tbody>
 </table>
