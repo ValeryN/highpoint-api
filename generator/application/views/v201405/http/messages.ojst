@@ -1,0 +1,23 @@
+<% @require LayoutTemplate = '../../layout' %>
+
+<% @template Page %>
+<% @inherits LayoutTemplate %>
+
+
+<% @block contentInternal { %>
+<h2>Список непрочитанных сообщений</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/messages/unread</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    messages: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Message">Message</a>&gt;
+  }
+}
+</pre>
+<p>Список сообщений сортируется от старых к новым.</p>
+<% @block contentInternal } %>

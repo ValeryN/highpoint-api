@@ -16,27 +16,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>highCrop</code></td>
-      <td><pre class="inline">{
-  left: uint,
-  top: uint,
-  width: uint,
-  height: uint
-}</pre></td>
-      <td>Параметры кропа изображения с пропорциями 3:4: координаты левого верхнего угла, ширина и высота</td>
-    </tr>
-    <tr>
-      <td><code>highImage</code></td>
-      <td><code><a href="#ImageEncoded">ImageEncoded</a></code></td>
-      <td>Изображение аватара с пропорциями 3:4</td>
-    </tr>
-    <tr>
-      <td><code>originalImage</code></td>
-      <td><code><a href="#Image">Image</a></code></td>
-      <td>Оригинальное изображение, из которого получен аватар</td>
-    </tr>
-    <tr>
-      <td><code>squareCrop</code></td>
+      <td><code>crop</code></td>
       <td><pre class="inline">{
   left: uint,
   top: uint,
@@ -46,9 +26,14 @@
       <td>Параметры кропа квадратного изображения: координаты левого верхнего угла, ширина и высота</td>
     </tr>
     <tr>
-      <td><code>squareImage</code></td>
+      <td><code>image</code></td>
       <td><code><a href="#ImageEncoded">ImageEncoded</a></code></td>
       <td>Квадратное изображение аватара</td>
+    </tr>
+    <tr>
+      <td><code>originalImage</code></td>
+      <td><code><a href="#Image">Image</a></code></td>
+      <td>Оригинальное изображение, из которого получен аватар</td>
     </tr>
   </tbody>
 </table>
@@ -1240,6 +1225,11 @@
       <td><code>online</code></td>
       <td><code>boolean</code></td>
       <td><code>true</code>, если пользователь в сети</td>
+    </tr>
+    <tr>
+      <td><code>visibility</code></td>
+      <td><code><a href="#Visibility">Visibility</a></code></td>
+      <td>Видимость профиля для текущего пользователя</td>
     </tr>
   </tbody>
 </table>

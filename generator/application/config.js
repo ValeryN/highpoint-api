@@ -45,6 +45,12 @@ module.exports = {
               url: '/v201405/http/users'
             },
             {
+              name: 'messages',
+              template: 'v201405/http/messages',
+              title: 'Сообщения',
+              url: '/v201405/http/messages'
+            },
+            {
               name: 'points',
               template: 'v201405/http/points',
               title: 'Поинты',

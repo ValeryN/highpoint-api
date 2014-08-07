@@ -48,10 +48,29 @@
 }
 </pre>
 
-<h2>Поиск географических локаций</h2>
+<h2 id='get'>Список популярных городов</h2>
 <div class='request'>
   <div class='method'>GET</div>
-  <div class='path'>/v201405/geo/find</div>
+  <div class='path'>/v201405/geo/cities/popular</div>
+</div>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    cities: Array.&lt;<a href="<%-this.routePath('datatypes')%>#City">City</a>&gt;,
+    countries: Object.&lt;<a href="<%-this.routePath('datatypes')%>#Country">Country</a>&gt;,
+    regions: Object.&lt;<a href="<%-this.routePath('datatypes')%>#Region">Region</a>&gt;
+  }
+}
+</pre>
+<p>Сортировка списка городов осуществляется по уменьшению популярности.</p>
+<p>Ключами объекта <code>countries</code> являются идентификаторы стран.</p>
+<p>Ключами объекта <code>regions</code> являются идентификаторы регионов.</p>
+
+<h2>Поиск городов</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/geo/cities/find</div>
 </div>
 <table class='params'>
   <caption>GET параметры</caption>
@@ -81,8 +100,8 @@
 {
   data: {
     cities: Array.&lt;<a href="<%-this.routePath('datatypes')%>#City">City</a>&gt;,
-    countries: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Country">Country</a>&gt;,
-    regions: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Region">Region</a>&gt;
+    countries: Object.&lt;<a href="<%-this.routePath('datatypes')%>#Country">Country</a>&gt;,
+    regions: Object.&lt;<a href="<%-this.routePath('datatypes')%>#Region">Region</a>&gt;
   }
 }
 </pre>
@@ -92,4 +111,7 @@
   <li>Полное название города начинается со строки запроса.</li>
   <li>Строка запроса присутствует в полном названиии города.</li>
 </ol>
+<p>Сортировка списка городов осуществляется по уменьшению популярности.</p>
+<p>Ключами объекта <code>countries</code> являются идентификаторы стран.</p>
+<p>Ключами объекта <code>regions</code> являются идентификаторы регионов.</p>
 <% @block contentInternal } %>

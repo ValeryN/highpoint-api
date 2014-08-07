@@ -26,14 +26,20 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @45:35
     '#Country">Country</a>&gt;,\n    regions: Array.&lt;<a href="',
     this.routePath('datatypes'), // @46:33
-    '#Region">Region</a>&gt;\n  }\n}</pre><h2>Поиск географических локаций</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/geo/find</div></div><table class=\'params\'><caption>GET параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>query</code></td><td><code>string</code></td><td>Строка запроса</td></tr><tr><td><code>limit</code></td><td><code>uint=</code></td><td>Ограничение в количестве городов. Максимум — 20</td></tr></tbody></table><p>Осуществляет поиск городов по строке. Поиск осуществляется без учета регистра.</p><p>Ответ:</p><pre js>{\n  data: {\n    cities: Array.&lt;<a href="',
-    this.routePath('datatypes'), // @83:32
-    '#City">City</a>&gt;,\n    countries: Array.&lt;<a href="',
-    this.routePath('datatypes'), // @84:35
-    '#Country">Country</a>&gt;,\n    regions: Array.&lt;<a href="',
-    this.routePath('datatypes'), // @85:33
-    '#Region">Region</a>&gt;\n  }\n}</pre><p>Порядок, в котором отдаются города:</p><ol><li>Строка запроса и название города совпадают.</li><li>Полное название города начинается со строки запроса.</li><li>Строка запроса присутствует в полном названиии города.</li></ol>'
+    '#Region">Region</a>&gt;\n  }\n}</pre><h2 id=\'get\'>Список популярных городов</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/geo/cities/popular</div></div><p>Ответ:</p><pre js>{\n  data: {\n    cities: Array.&lt;<a href="',
+    this.routePath('datatypes'), // @60:32
+    '#City">City</a>&gt;,\n    countries: Object.&lt;<a href="',
+    this.routePath('datatypes'), // @61:36
+    '#Country">Country</a>&gt;,\n    regions: Object.&lt;<a href="',
+    this.routePath('datatypes'), // @62:34
+    '#Region">Region</a>&gt;\n  }\n}</pre><p>Сортировка списка городов осуществляется по уменьшению популярности.</p><p>Ключами объекта <code>countries</code> являются идентификаторы стран.</p><p>Ключами объекта <code>regions</code> являются идентификаторы регионов.</p><h2>Поиск городов</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/geo/cities/find</div></div><table class=\'params\'><caption>GET параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>query</code></td><td><code>string</code></td><td>Строка запроса</td></tr><tr><td><code>limit</code></td><td><code>uint=</code></td><td>Ограничение в количестве городов. Максимум — 20</td></tr></tbody></table><p>Осуществляет поиск городов по строке. Поиск осуществляется без учета регистра.</p><p>Ответ:</p><pre js>{\n  data: {\n    cities: Array.&lt;<a href="',
+    this.routePath('datatypes'), // @102:32
+    '#City">City</a>&gt;,\n    countries: Object.&lt;<a href="',
+    this.routePath('datatypes'), // @103:36
+    '#Country">Country</a>&gt;,\n    regions: Object.&lt;<a href="',
+    this.routePath('datatypes'), // @104:34
+    '#Region">Region</a>&gt;\n  }\n}</pre><p>Порядок, в котором отдаются города:</p><ol><li>Строка запроса и название города совпадают.</li><li>Полное название города начинается со строки запроса.</li><li>Строка запроса присутствует в полном названиии города.</li></ol><p>Сортировка списка городов осуществляется по уменьшению популярности.</p><p>Ключами объекта <code>countries</code> являются идентификаторы стран.</p><p>Ключами объекта <code>regions</code> являются идентификаторы регионов.</p>'
   );
-}; // @95:1
+}; // @117:1
 
 module.exports = Page;
