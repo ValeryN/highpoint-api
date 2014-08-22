@@ -9,6 +9,7 @@
 <div class='request'>
   <div class='method'>GET</div>
   <div class='path'>/v201405/users</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
 </div>
 <table class='params'>
   <caption>GET параметры</caption>
@@ -65,6 +66,38 @@
 }
 </pre>
 <p>Если задан GET параметр <code>includePoints=1</code>, в ответе возвращаются поинты, созданные пользователями. Ключом является идентификатор пользователям, значением — объект поинта.</p>
+
+<h2>Информация о пользователе</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/users/&lt;id&gt;</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<table class='params'>
+  <caption>Параметры адресной строки</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор <a href="<%-this.routePath('datatypes')%>#User">пользователя</a></td>
+    </tr>
+  </tbody>
+</table>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    user: <a href="<%-this.routePath('datatypes')%>#User">User</a><%-'\n  '%>
+  }
+}
+</pre>
 
 <h2>Список сообщений текущего пользователя с другим пользователем</h2>
 <div class='request'>
