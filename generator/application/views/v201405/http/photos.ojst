@@ -1,0 +1,98 @@
+<% @require LayoutTemplate = '../../layout' %>
+
+<% @template Page %>
+<% @inherits LayoutTemplate %>
+
+
+<% @block contentInternal { %>
+<h2>Загрузка фотографии</h2>
+<div class='request'>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/photos/add</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<table class='params'>
+  <caption>POST параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>image</code></td>
+      <td><code>File</code></td>
+      <td>Файл изображения</td>
+    </tr>
+  </tbody>
+</table>
+<p>Ответ:</p>
+<pre js>{
+  data: {
+    photo: <a href="<%-this.routePath('datatypes')%>#Photo">Photo</a><%-'\n  '%>
+  }
+}
+</pre>
+<p>В случае неправильного формата файла выводится ошибка со статусом 403:</p>
+<pre js>
+{
+  error: {
+    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_WRONG_FILE_FORMAT'>ErrorCode.WRONG_FILE_FORMAT</a><%-'\n  '%>
+  }
+}
+</pre>
+<p>В случае слишком большого размера файла выводится ошибка со статусом 403:</p>
+<pre js>
+{
+  error: {
+    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_TOO_LARGE_FILE'>ErrorCode.TOO_LARGE_FILE</a><%-'\n  '%>
+  }
+}
+</pre>
+<p>В случае слишком маленького размера изображения выводится ошибка со статусом 403:</p>
+<pre js>
+{
+  error: {
+    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_TOO_SMALL_SIZE'>ErrorCode.TOO_SMALL_SIZE</a><%-'\n  '%>
+  }
+}
+</pre>
+
+<h2>Удаление фотографии</h2>
+<div class='request'>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/photos/&lt;id&gt;/remove</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<table class='params'>
+  <caption>Параметры адреса</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>uint</code></td>
+      <td>Идентификатор <a href="<%-this.routePath('datatypes')%>#Photo">фотографии</a></td>
+    </tr>
+  </tbody>
+</table>
+<p>В ответе выдается идентификатор удаленной фотографии:</p>
+<pre js>{
+  data: {
+    id: uint
+  }
+}
+</pre>
+<p>Возможные ошибки:</p>
+<ul>
+  <li><a href="<%-this.routePath('http')%>#error404">объект не найден</a></li>
+  <li><a href="<%-this.routePath('http')%>#errorAccessDenied">отказано в доступе</a></li>
+</ul>
+<% @block contentInternal } %>

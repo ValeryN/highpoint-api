@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>HTTP запросы</title><link media='all' rel='stylesheet' type='text/css' href='../s/css/main.css'></head><body><div class="content"><h1>HTTP запросы</h1><h2>Типовые ошибки</h2><h3 id="error401">Требуется авторизация</h3><p>HTTP статус — 401. Ответ:</p><pre js>{
+  error: {
+    code: <a href='./data-types.html#ErrorCode_WRONG_TOKEN'>ErrorCode.WRONG_TOKEN</a>
+  }
+}</pre><h3 id="error404">Объект не найден</h3><p>HTTP статус — 404. Ответ:</p><pre js>{
+  error: {
+    code: <a href='./data-types.html#ErrorCode_NOT_FOUND'>ErrorCode.NOT_FOUND</a>
+  }
+}</pre><h3 id="error500">Ошибка сервера</h3><p>HTTP статус — 500. Ответ:</p><pre js>{
+  error: {
+    code: <a href='./data-types.html#ErrorCode_SERVER_ERROR'>ErrorCode.SERVER_ERROR</a>
+  }
+}</pre><h3 id="errorAccessDenied">Отказано в доступе</h3><p>HTTP статус — 403. Ответ:</p><pre js>{
+  error: {
+    code: <a href='./data-types.html#ErrorCode_ACCESS_DENIED'>ACCESS_DENIED.WRONG_PARAMS</a>
+  }
+}</pre><h3 id="errorWrongParams">Некорректные входные данные</h3><p>Выдается в случае, если одно или несколько полей запроса неверные.</p><p>HTTP статус — 403. Ответ:</p><pre js>{
+  error: {
+    code: <a href='./data-types.html#ErrorCode_WRONG_PARAMS'>ErrorCode.WRONG_PARAMS</a>,
+    params: Array.&lt;{code: <a href='./data-types.html#ErrorCode'>ErrorCode</a>, name: string}&gt;
+  }
+}</pre><p>Пример ответа для запроса <a href="http/me.html#addEducation">добавления образования текущему пользователю</a>, если не указано поле <code>school</code>:</p><pre js>{
+  error: {
+    code: 3,
+    params: [{
+      code: 6,
+      name: 'school'
+    }]
+  }
+}</pre></div><div class='sidebar'><div class='navigation'><div class='item'><a href="../index.html">High Point API</a><div class='navigation'><div class='item'>Версия от 2014-05<div class='navigation'><div class='item item-selected'>HTTP запросы<div class='navigation'><div class='item'><a href="http/settings.html">Настройки приложения</a></div><div class='item'><a href="http/auth.html">Авторизация и регистрация</a></div><div class='item'><a href="http/me.html">Текущий пользователь</a></div><div class='item'><a href="http/contacts.html">Контакты</a></div><div class='item'><a href="http/users.html">Пользователи</a></div><div class='item'><a href="http/messages.html">Сообщения</a></div><div class='item'><a href="http/points.html">Поинты</a></div><div class='item'><a href="http/photos.html">Фотографии</a></div><div class='item'><a href="http/geo.html">Географические локации</a></div><div class='item'><a href="http/reference.html">Справочник</a></div></div></div><div class='item'><a href="./web-sockets.html">Web-сокеты</a><div class='navigation'><div class='item'><a href="web-sockets/client2server.html">Команды клиента серверу</a></div><div class='item'><a href="web-sockets/server2client.html">События сервера клиенту</a></div></div></div><div class='item'><a href="./data-types.html">Типы данных</a></div></div></div></div></div></div><div class='toggle'></div></div><script src='../s/js/main.js'></script></body></html>

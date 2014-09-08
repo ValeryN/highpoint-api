@@ -331,7 +331,7 @@
 }
 </pre>
 
-<h2>Добавление образования</h2>
+<h2 id="addEducation">Добавление образования</h2>
 <div class='request'>
   <div class='method'>POST</div>
   <div class='path'>/v201405/me/education/add</div>
@@ -428,6 +428,165 @@
 {
   data: {
     ids: Array.&lt;uint&gt;
+  }
+}
+</pre>
+
+<h2>Загрузка и обновление изображения для аватара</h2>
+<div class='request'>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/me/avatar/add</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<table class='params'>
+  <caption>POST параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>image</code></td>
+      <td><code>File</code></td>
+      <td>Файл изображения</td>
+    </tr>
+  </tbody>
+</table>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    image: <a href="<%-this.routePath('datatypes')%>#Image">Image</a><%-'\n  '%>
+  }
+}
+</pre>
+<p>В случае неправильного формата файла выводится ошибка со статусом 403:</p>
+<pre js>
+{
+  error: {
+    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_WRONG_FILE_FORMAT'>ErrorCode.WRONG_FILE_FORMAT</a><%-'\n  '%>
+  }
+}
+</pre>
+<p>В случае слишком большого размера файла выводится ошибка со статусом 403:</p>
+<pre js>
+{
+  error: {
+    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_TOO_LARGE_FILE'>ErrorCode.TOO_LARGE_FILE</a><%-'\n  '%>
+  }
+}
+</pre>
+<p>В случае слишком маленького размера изображения выводится ошибка со статусом 403:</p>
+<pre js>
+{
+  error: {
+    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_TOO_SMALL_SIZE'>ErrorCode.TOO_SMALL_SIZE</a><%-'\n  '%>
+  }
+}
+</pre>
+
+<h2>Кроп аватара</h2>
+<div class='request'>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/me/avatar/crop</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<table class='params'>
+  <caption>POST параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>height</code></td>
+      <td><code>uint</code></td>
+      <td>Высота</td>
+    </tr>
+    <tr>
+      <td><code>left</code></td>
+      <td><code>uint</code></td>
+      <td>Координата левого верхнего угла по горизонтали</td>
+    </tr>
+    <tr>
+      <td><code>top</code></td>
+      <td><code>uint</code></td>
+      <td>Координата левого верхнего угла по вертикали</td>
+    </tr>
+    <tr>
+      <td><code>width</code></td>
+      <td><code>uint</code></td>
+      <td>Ширина</td>
+    </tr>
+  </tbody>
+</table>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    avatar: <a href="<%-this.routePath('datatypes')%>#Avatar">Avatar</a><%-'\n  '%>
+  }
+}
+</pre>
+<p>В случае отсутствия изображения для кропа выдается <a href="<%-this.routePath('http')%>#error404">ошибка со статусом 404</a>.</p>
+<p>В случае слишком маленького размера области кропа выводится ошибка со статусом 403:</p>
+<pre js>
+{
+  error: {
+    code: <a href='<%-this.routePath('datatypes')%>#ErrorCode_TOO_SMALL_SIZE'>ErrorCode.TOO_SMALL_SIZE</a><%-'\n  '%>
+  }
+}
+</pre>
+
+<h2>Список фотографий</h2>
+<div class='request'>
+  <div class='method'>GET</div>
+  <div class='path'>/v201405/me/photos</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    photos: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Photo">Photo</a>&gt;
+  }
+}
+</pre>
+
+<h2>Упорядочивание фотографий</h2>
+<div class='request'>
+  <div class='method'>POST</div>
+  <div class='path'>/v201405/me/photos/sort</div>
+  <div class='auth'>Требуется <a href="<%-this.routePath('auth')%>#signin">авторизация</a></div>
+</div>
+<table class='params'>
+  <caption>POST параметры</caption>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ids</code></td>
+      <td><code>JSON(Array.&lt;uint&gt;)</code></td>
+      <td>Идентификаторы фотографий, разделенные запятой</td>
+    </tr>
+  </tbody>
+</table>
+<p>Ответ:</p>
+<pre js>
+{
+  data: {
+    photos: Array.&lt;<a href="<%-this.routePath('datatypes')%>#Photo">Photo</a>&gt;
   }
 }
 </pre>

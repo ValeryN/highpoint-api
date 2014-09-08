@@ -90,7 +90,7 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @321:35
     '#Place">мест</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
     this.routePath('datatypes'), // @325:53
-    '#Place">мест</a>, которые были удалены у пользователя:</p><pre js>{\n  data: {\n    ids: Array.&lt;uint&gt;\n  }\n}</pre><h2>Добавление образования</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/education/add</div><div class=\'auth\'>Требуется <a href="',
+    '#Place">мест</a>, которые были удалены у пользователя:</p><pre js>{\n  data: {\n    ids: Array.&lt;uint&gt;\n  }\n}</pre><h2 id="addEducation">Добавление образования</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/education/add</div><div class=\'auth\'>Требуется <a href="',
     this.routePath('auth'), // @338:40
     '#signin">авторизация</a></div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>fromYear</code></td><td><code>uint=</code></td><td>Год начала обучения</td></tr><tr><td><code>schoolId</code></td><td><code>uint=</code></td><td>Идентификатор <a href="',
     this.routePath('datatypes'), // @358:34
@@ -114,8 +114,46 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @422:35
     '#EducationItem">образования</a>, разделенных запятыми</td></tr></tbody></table><p>В ответ выдается список идентификаторов <a href="',
     this.routePath('datatypes'), // @426:53
-    '#EducationItem">образования</a>, которые были удалены у пользователя:</p><pre js>{\n  data: {\n    ids: Array.&lt;uint&gt;\n  }\n}</pre>'
+    '#EducationItem">образования</a>, которые были удалены у пользователя:</p><pre js>{\n  data: {\n    ids: Array.&lt;uint&gt;\n  }\n}</pre><h2>Загрузка и обновление изображения для аватара</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/avatar/add</div><div class=\'auth\'>Требуется <a href="',
+    this.routePath('auth'), // @439:40
+    '#signin">авторизация</a></div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>image</code></td><td><code>File</code></td><td>Файл изображения</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: {\n    image: <a href="',
+    this.routePath('datatypes'), // @462:21
+    '#Image">Image</a>',
+    '\n  ', // @462:70
+    '}\n}</pre><p>В случае неправильного формата файла выводится ошибка со статусом 403:</p><pre js>{\n  error: {\n    code: <a href=\'',
+    this.routePath('datatypes'), // @470:20
+    '#ErrorCode_WRONG_FILE_FORMAT\'>ErrorCode.WRONG_FILE_FORMAT</a>',
+    '\n  ', // @470:113
+    '}\n}</pre><p>В случае слишком большого размера файла выводится ошибка со статусом 403:</p><pre js>{\n  error: {\n    code: <a href=\'',
+    this.routePath('datatypes'), // @478:20
+    '#ErrorCode_TOO_LARGE_FILE\'>ErrorCode.TOO_LARGE_FILE</a>',
+    '\n  ', // @478:107
+    '}\n}</pre><p>В случае слишком маленького размера изображения выводится ошибка со статусом 403:</p><pre js>{\n  error: {\n    code: <a href=\'',
+    this.routePath('datatypes'), // @486:20
+    '#ErrorCode_TOO_SMALL_SIZE\'>ErrorCode.TOO_SMALL_SIZE</a>',
+    '\n  ', // @486:107
+    '}\n}</pre><h2>Кроп аватара</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/avatar/crop</div><div class=\'auth\'>Требуется <a href="',
+    this.routePath('auth'), // @495:40
+    '#signin">авторизация</a></div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>height</code></td><td><code>uint</code></td><td>Высота</td></tr><tr><td><code>left</code></td><td><code>uint</code></td><td>Координата левого верхнего угла по горизонтали</td></tr><tr><td><code>top</code></td><td><code>uint</code></td><td>Координата левого верхнего угла по вертикали</td></tr><tr><td><code>width</code></td><td><code>uint</code></td><td>Ширина</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: {\n    avatar: <a href="',
+    this.routePath('datatypes'), // @533:22
+    '#Avatar">Avatar</a>',
+    '\n  ', // @533:73
+    '}\n}</pre><p>В случае отсутствия изображения для кропа выдается <a href="',
+    this.routePath('http'), // @537:64
+    '#error404">ошибка со статусом 404</a>.</p><p>В случае слишком маленького размера области кропа выводится ошибка со статусом 403:</p><pre js>{\n  error: {\n    code: <a href=\'',
+    this.routePath('datatypes'), // @542:20
+    '#ErrorCode_TOO_SMALL_SIZE\'>ErrorCode.TOO_SMALL_SIZE</a>',
+    '\n  ', // @542:107
+    '}\n}</pre><h2>Список фотографий</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/me/photos</div><div class=\'auth\'>Требуется <a href="',
+    this.routePath('auth'), // @551:40
+    '#signin">авторизация</a></div></div><p>Ответ:</p><pre js>{\n  data: {\n    photos: Array.&lt;<a href="',
+    this.routePath('datatypes'), // @557:32
+    '#Photo">Photo</a>&gt;\n  }\n}</pre><h2>Упорядочивание фотографий</h2><div class=\'request\'><div class=\'method\'>POST</div><div class=\'path\'>/v201405/me/photos/sort</div><div class=\'auth\'>Требуется <a href="',
+    this.routePath('auth'), // @566:40
+    '#signin">авторизация</a></div></div><table class=\'params\'><caption>POST параметры</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>ids</code></td><td><code>JSON(Array.&lt;uint&gt;)</code></td><td>Идентификаторы фотографий, разделенные запятой</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: {\n    photos: Array.&lt;<a href="',
+    this.routePath('datatypes'), // @589:32
+    '#Photo">Photo</a>&gt;\n  }\n}</pre>'
   );
-}; // @434:1
+}; // @593:1
 
 module.exports = Page;

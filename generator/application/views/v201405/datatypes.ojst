@@ -313,6 +313,36 @@
       <td><code>6</code></td>
       <td>Требуется параметр</td>
     </tr>
+    <tr id="ErrorCode_WRONG_JSON">
+      <td><code>WRONG_JSON</code></td>
+      <td><code>7</code></td>
+      <td>Некорректный JSON</td>
+    </tr>
+    <tr id="ErrorCode_WRONG_FILE_FORMAT">
+      <td><code>WRONG_FILE_FORMAT</code></td>
+      <td><code>8</code></td>
+      <td>Неправильный формат файла</td>
+    </tr>
+    <tr id="ErrorCode_TOO_LARGE_FILE">
+      <td><code>TOO_LARGE_FILE</code></td>
+      <td><code>9</code></td>
+      <td>Слишком большой размер файла</td>
+    </tr>
+    <tr id="ErrorCode_TOO_SMALL_SIZE">
+      <td><code>TOO_SMALL_SIZE</code></td>
+      <td><code>10</code></td>
+      <td>Слишком маленький размер изображения</td>
+    </tr>
+    <tr id="ErrorCode_ACCESS_DENIED">
+      <td><code>ACCESS_DENIED</code></td>
+      <td><code>11</code></td>
+      <td>Отказано в доступе</td>
+    </tr>
+    <tr id="ErrorCode_WRONG_FORMAT">
+      <td><code>WRONG_FORMAT</code></td>
+      <td><code>12</code></td>
+      <td>Неправильный формат поля</td>
+    </tr>
   </tbody>
 </table>
 
@@ -670,11 +700,6 @@
       <td>Электронная почта</td>
     </tr>
     <tr>
-      <td><code>favoriteCityIds</code></td>
-      <td><code>Array.&lt;uint&gt;</code></td>
-      <td>Идентификаторы любимых <a href="#City">городов</a></td>
-    </tr>
-    <tr>
       <td><code>favoritePlaceIds</code></td>
       <td><code>Array.&lt;uint&gt;</code></td>
       <td>Идентификаторы любимых <a href="#Place">мест</a></td>
@@ -857,7 +882,7 @@
     </tr>
     <tr>
       <td><code>title</code></td>
-      <td><code>string</code></td>
+      <td><code>string=</code></td>
       <td>Заголовок</td>
     </tr>
   </tbody>
@@ -1085,12 +1110,27 @@
       <td><code>avatar</code></td>
       <td><pre class="inline">{
   maxFileSize: uint,
+  minCropSize: {
+    width: uint,
+    height: uint
+  },
   minImageSize: {
     width: uint,
     height: uint
   }
 }</pre></td>
-      <td>Максимальный размер файла в байтах и минимальный размер изображения</td>
+      <td>Максимальный размер файла аватара в байтах и минимальный размер изображения</td>
+    </tr>
+    <tr>
+      <td><code>photo</code></td>
+      <td><pre class="inline">{
+  maxFileSize: uint,
+  minImageSize: {
+    width: uint,
+    height: uint
+  }
+}</pre></td>
+      <td>Максимальный размер файла фотографии в байтах и минимальный размер изображения</td>
     </tr>
     <tr>
       <td><code>point</code></td>
@@ -1180,11 +1220,6 @@
       <td><code>email</code></td>
       <td><code>string=</code></td>
       <td>Электронная почта</td>
-    </tr>
-    <tr>
-      <td><code>favoriteCityIds</code></td>
-      <td><code>Array.&lt;uint&gt;</code></td>
-      <td>Идентификаторы любимых <a href="#City">городов</a></td>
     </tr>
     <tr>
       <td><code>favoritePlaceIds</code></td>

@@ -26,7 +26,7 @@ Page.prototype.renderBlockContentInternal = function () { // @7:1
     this.routePath('datatypes'), // @63:32
     '#Point">Point</a>&gt;,\n    users: Object.&lt;<a href="',
     this.routePath('datatypes'), // @64:32
-    '#User">User</a>&gt;=\n  }\n}</pre><p>Если задан GET параметр <code>includeUsers=1</code>, в ответе возвращаются пользователи, создавшие поинты. Ключом является идентификатор поинта, значением — объект пользователя.</p><h2>Получение списка пользователей, залайкавших пост</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/points/&lt;id&gt;/liked</div><div class=\'auth\'>Требуется <a href="',
+    '#User">User</a>&gt;=\n  }\n}</pre><p>Если задан GET параметр <code>includeUsers=1</code>, в ответе возвращаются пользователи, создавшие поинты. Ключом является идентификатор поинта, значением — объект пользователя.</p><h2>Получение списка пользователей, залайкавших поинт</h2><div class=\'request\'><div class=\'method\'>GET</div><div class=\'path\'>/v201405/points/&lt;id&gt;/liked</div><div class=\'auth\'>Требуется <a href="',
     this.routePath('auth'), // @74:40
     '#signin">авторизация</a></div></div><table class=\'params\'><caption>Параметры адресной строки</caption><thead><tr><th>Название</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>uint</code></td><td>Идентификатор поинта</td></tr></tbody></table><p>Ответ:</p><pre js>{\n  data: {\n    users: Array.&lt;<a href="',
     this.routePath('datatypes'), // @97:31

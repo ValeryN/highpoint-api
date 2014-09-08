@@ -12,7 +12,10 @@ module.exports = {
         title: 'Версия от 2014-05',
         childs: [
         {
+          name: 'http',
+          template: 'v201405/http',
           title: 'HTTP запросы',
+          url: '/v201405/http',
           childs: [
             {
               name: 'settings',
@@ -55,6 +58,12 @@ module.exports = {
               template: 'v201405/http/points',
               title: 'Поинты',
               url: '/v201405/http/points'
+            },
+            {
+              name: 'photos',
+              template: 'v201405/http/photos',
+              title: 'Фотографии',
+              url: '/v201405/http/photos'
             },
             {
               name: 'geo',
